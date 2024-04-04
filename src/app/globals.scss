@@ -1,47 +1,47 @@
 // reset
-/* @import "./wellintone_lib/reset.module"; */
+/* @import "../wellintone_lib/reset.module"; */
 // variables & functions
-@import "./wellintone_lib/functions.module";
-@import "./wellintone_lib/variables.module";
+@import "../wellintone_lib/functions.module";
+@import "../wellintone_lib/variables.module";
 // base
-@import "./wellintone_lib/base.module";
+@import "../wellintone_lib/base.module";
 // breakpoints
-@import "./wellintone_lib/breakpoint.module";
+@import "../wellintone_lib/breakpoint.module";
 // grid
-@import "./wellintone_lib/grid.module";
+@import "../wellintone_lib/grid.module";
 
 // colors
-@import "./wellintone_lib/colors.module";
+@import "../wellintone_lib/colors.module";
 
 //fonts
-@import "./wellintone_lib/fonts.module";
+@import "../wellintone_lib/fonts.module";
 
 //components
 
 /* NAVBAR */
-@import "./wellintone_lib/components/Navbar/navbar.module";
-@import "./wellintone_lib/components/Navbar/logo.module";
-@import "./wellintone_lib/components/Navbar/navbar-links-list.module";
-@import "./wellintone_lib/components/Navbar/navbar-link.module";
-@import "./wellintone_lib/components/Navbar/hamburger.module";
-@import "./wellintone_lib/components/Navbar/navbar-additional.module";
+@import "../wellintone_lib/components/Navbar/navbar.module";
+@import "../wellintone_lib/components/Navbar/logo.module";
+@import "../wellintone_lib/components/Navbar/navbar-links-list.module";
+@import "../wellintone_lib/components/Navbar/navbar-link.module";
+@import "../wellintone_lib/components/Navbar/hamburger.module";
+@import "../wellintone_lib/components/Navbar/navbar-additional.module";
 
-@import "./wellintone_lib/components/card.module";
-@import "./wellintone_lib/components/button.module";
-@import "./wellintone_lib/components/badge.module";
-@import "./wellintone_lib/components/menu-items.module";
+@import "../wellintone_lib/components/card.module";
+@import "../wellintone_lib/components/button.module";
+@import "../wellintone_lib/components/badge.module";
+@import "../wellintone_lib/components/menu-items.module";
 
 /* CARDS */
-@import "./wellintone_lib/components/Cards/card_image_hover.module";
-@import "./wellintone_lib/components/Cards/card_service_1.module";
+@import "../wellintone_lib/components/Cards/card_image_hover.module";
+@import "../wellintone_lib/components/Cards/card_service_1.module";
 
 /* SWITCH */
-@import "./components/Switch/switch.module";
+@import "../components/Switch/switch.module";
 
 /* LOGO WELLINTONE */
-@import "./components/Logo/logo.module";
+@import "../components/Logo/logo.module";
 
-@import "./wellintone_lib/utilities.module";
+@import "../wellintone_lib/utilities.module";
 
 .parallaxContent {
   height: fit-content;

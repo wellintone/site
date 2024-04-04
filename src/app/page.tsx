@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "./components/NavbarMain/Navbar";
-import Button from "./components/button";
+import Navbar from "../components/NavbarMain/Navbar";
+import Button from "../components/button";
 import { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "./context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);

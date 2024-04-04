@@ -1,4 +1,4 @@
-import { LinksType } from "@/app/types/links";
+import { LinksType } from "@/types/links";
 
 export const Links: LinksType[] = [
   { route: "/", name: "Home" },

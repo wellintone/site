@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto, Playfair_Display } from "next/font/google";
 import "./globals.scss";
-import ThemeProvider from "./context/ThemeContext";
+import ThemeProvider from "../context/ThemeContext";
 
 const roboto_init = Roboto({
   subsets: ["latin"],
