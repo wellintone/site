@@ -41,6 +41,10 @@
 /* LOGO WELLINTONE */
 @import "../components/Logo/logo.module";
 
+/* PAGES */
+@import "./home.module";
+@import "../app/\(routes\)/about/about.module";
+
 @import "../wellintone_lib/utilities.module";
 
 .parallaxContent {

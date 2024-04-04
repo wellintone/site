@@ -1,64 +1,30 @@
-"use client";
-
 import Image from "next/image";
-import Navbar from "../components/NavbarMain/Navbar";
-import Button from "../components/button";
-import { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "../context/ThemeContext";
+import React from "react";
+import ProfilePicture from "../../public/img/developer-pic-1.png";
 
-export default function Home() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
-
+const Home = () => {
   return (
-    <main>
-      {/* <div className="theme-switch-wrapper">
-        <span id="toggle-icon">
-          <span className="toggle-text">
-            {theme ? "Light Mode" : "Dark Mode"}
-          </span>
-          <span>{theme ? "🌙" : "☀️"}</span>
-        </span>
-        <label className="theme-switch">
-          <input
-            className="theme-switch"
-            type="checkbox"
-            id="toggle"
-            checked={theme}
-            onChange={(e: any) => toggleTheme(e?.target.checked)}
+    <main className="home align-center justify-center w-full">
+      <div className="display-f align-center justify-between w-full">
+        <div className="img__container">
+          <Image
+            src={ProfilePicture}
+            alt="Wellintone"
+            className="w-full h-auto"
           />
-          <div className="slider round"></div>
-        </label>
-      </div> */}
-      <Navbar linkColor="white" textBold={800} />
-
-      <section id="home">
-        <div className="title-group">
-          <h1>Custom title here</h1>
-          <h2>Welcome to de website</h2>
         </div>
-      </section>
-      <section id="about">
-        <h1>Undraw illustrations</h1>
-      </section>
-      <section id="projects">
-        <h1>Buttons</h1>
-        <div className="buttons">
-          <button className="b-primary">Primary</button>
-          <button className="b-secondary">Secondary</button>
-          <button className="b-disabled" disabled>
-            Disabled
-          </button>
-          <button className="b-outline">Outline</button>
+        <div className="img__container">
+          <h1>Turning Vision Into Reality With Code And Design.</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
+            labore explicabo libero commodi sequi delectus saepe, et suscipit
+            veritatis aliquid itaque, voluptatum dolores, dolorum ut aspernatur.
+            Nostrum dolorum vero tempora!
+          </p>
         </div>
-        <div className="text-box" id="text-box">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
-          animi nam vero molestias cumque, totam error non fugiat dignissimos?
-          Corporis fugit esse non quas aliquid alias quo id voluptas odio!
-        </div>
-      </section>
-      <section id="contacts">
-        <h1>Contacts section</h1>
-      </section>
+      </div>
     </main>
   );
-}
+};
+
+export default Home;

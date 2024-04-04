@@ -19,9 +19,12 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: var(--font-roboto);
   overflow-x: hidden;
   min-height: 100vh;
+
   @include customize(theme) {
     background-color: getValue(background);
     color: getValue(on-background);
