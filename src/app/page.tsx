@@ -1,95 +1,64 @@
+"use client";
+
 import Image from "next/image";
-import styles from "./page.module.css";
+import Navbar from "./components/NavbarMain/Navbar";
+import Button from "./components/button";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "./context/ThemeContext";
 
 export default function Home() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <div className="theme-switch-wrapper">
+        <span id="toggle-icon">
+          <span className="toggle-text">
+            {theme ? "Light Mode" : "Dark Mode"}
+          </span>
+          <span>{theme ? "🌙" : "☀️"}</span>
+        </span>
+        <label className="theme-switch">
+          <input
+            className="theme-switch"
+            type="checkbox"
+            id="toggle"
+            checked={theme}
+            onChange={(e: any) => toggleTheme(e?.target.checked)}
+          />
+          <div className="slider round"></div>
+        </label>
+      </div>
+      <Navbar type="primary-transparent-0" linkColor="white" textBold={800} />
+
+      <section id="home">
+        <div className="title-group">
+          <h1>Custom title here</h1>
+          <h2>Welcome to de website</h2>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
+      <section id="about">
+        <h1>Undraw illustrations</h1>
+      </section>
+      <section id="projects">
+        <h1>Buttons</h1>
+        <div className="buttons">
+          <button className="b-primary">Primary</button>
+          <button className="b-secondary">Secondary</button>
+          <button className="b-disabled" disabled>
+            Disabled
+          </button>
+          <button className="b-outline">Outline</button>
+        </div>
+        <div className="text-box" id="text-box">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur
+          animi nam vero molestias cumque, totam error non fugiat dignissimos?
+          Corporis fugit esse non quas aliquid alias quo id voluptas odio!
+        </div>
+      </section>
+      <section id="contacts">
+        <h1>Contacts section</h1>
+      </section>
     </main>
   );
 }

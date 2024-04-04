@@ -1,0 +1,272 @@
+// reset
+/* @import "./wellintone_lib/reset.module"; */
+// variables & functions
+@import "./wellintone_lib/functions.module";
+@import "./wellintone_lib/variables.module";
+// base
+@import "./wellintone_lib/base.module";
+// breakpoints
+@import "./wellintone_lib/breakpoint.module";
+// grid
+@import "./wellintone_lib/grid.module";
+
+// colors
+@import "./wellintone_lib/colors.module";
+
+//fonts
+@import "./wellintone_lib/fonts.module";
+
+//components
+
+/* NAVBAR */
+@import "./wellintone_lib/components/Navbar/navbar.module";
+@import "./wellintone_lib/components/Navbar/logo.module";
+@import "./wellintone_lib/components/Navbar/navbar-links-list.module";
+@import "./wellintone_lib/components/Navbar/navbar-link.module";
+@import "./wellintone_lib/components/Navbar/hamburger.module";
+@import "./wellintone_lib/components/Navbar/navbar-additional.module";
+
+@import "./wellintone_lib/components/card.module";
+@import "./wellintone_lib/components/button.module";
+@import "./wellintone_lib/components/badge.module";
+@import "./wellintone_lib/components/menu-items.module";
+
+/* CARDS */
+@import "./wellintone_lib/components/Cards/card_image_hover.module";
+@import "./wellintone_lib/components/Cards/card_service_1.module";
+// utilities (margin, padding, opacity)
+@import "./wellintone_lib/utilities.module";
+
+.parallaxContent {
+  height: fit-content;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.animate {
+  opacity: 0;
+  /* transform: translateX(-100%); */
+  filter: blur(5px);
+  transition: 0.8s ease-in-out;
+}
+
+.show-animate {
+  opacity: 1;
+  filter: blur(0px);
+  /* transform: translateX(0); */
+  transition: 0.8s ease-in-out;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* DA RIMUOVERE */
+
+a:hover,
+a:focus {
+  color: $on-background;
+  border-bottom: 3px solid;
+}
+
+/* Home Section */
+.title-group {
+  text-align: center;
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+}
+
+.image-container {
+  border: 1px solid $secondary;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-right: 25px;
+  width: auto;
+  background: $background;
+  box-shadow: $box-shadow;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+/* Projects Section */
+.buttons {
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+button {
+  min-width: 100px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10px;
+  border: 2px solid $primary;
+  font-size: 15px;
+  outline: none;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+button:hover:not(.outline) {
+  filter: brightness(110%);
+}
+
+.b-primary {
+  background: $primary;
+  color: $on-primary;
+}
+
+.b-secondary {
+  border: 2px solid $secondary;
+}
+
+.b-secondary,
+.b-secondary:hover,
+.b-outline.secondary:hover {
+  @include customize(theme) {
+    background: getValue(secondary);
+    color: getValue(on-primary);
+  }
+}
+
+.b-outline {
+  @include customize(theme) {
+    background: getValue(background);
+    color: getValue(on-background);
+  }
+}
+
+.b-outline:hover {
+  @include customize(theme) {
+    background: getValue(primary);
+    color: getValue(on-primary);
+  }
+}
+
+.text-box {
+  width: 40%;
+  text-align: justify;
+  background: rgb(0 0 0 / 50%);
+  @include customize(theme) {
+    color: getValue(on-primary);
+  }
+  border-radius: 10px;
+  padding: 30px;
+}
+
+p {
+  margin: 0;
+  line-height: 25px;
+}
+
+/* Contact Section */
+.fab {
+  font-size: 100px;
+  margin-right: 50px;
+  cursor: pointer;
+  @include customize(theme) {
+    color: getValue(primary);
+  }
+}
+
+.fab:hover {
+  @include customize(theme) {
+    color: getValue(on-background);
+  }
+}
+
+/* Dark Mode Toggle */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  right: 25px;
+  top: 30px;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  position: relative;
+  right: 5px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  @include customize(theme) {
+    background: getValue(primary);
+  }
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider::before {
+  background: #fff;
+
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  @include customize(theme) {
+    background-color: getValue(primary);
+  }
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.fas {
+  font-size: 30px;
+  margin-right: 5px;
+}

@@ -1,0 +1,46 @@
+/* H1 */
+$maxH1: 6.25rem;
+$minH1: 3.125rem;
+/* H2 */
+$maxH2: 2.875rem;
+$minH2: 2.125rem;
+/* H3 */
+$maxH3: 1.5rem;
+$minH3: 1.125rem;
+/* H4 */
+$maxH4: 1.25rem;
+$minH4: 1.125rem;
+/* H5 */
+$maxH5: 1.125rem;
+$minH5: 1rem;
+/* Paragraph */
+$maxParagraph: 1.125rem;
+$minParagraph: 0.875rem;
+
+$current: 10vw;
+
+h1 {
+  font-family: var(--font-playfair_display);
+  font-size: clamp($minH1, $current, $maxH1);
+}
+h2 {
+  color: $on-background-alt;
+  margin: 0;
+  font-size: clamp($minH2, $current, $maxH2);
+}
+h3 {
+  margin: 0;
+  font-size: clamp($minH3, $current, $maxH3);
+}
+h4 {
+  margin: 0;
+  font-size: clamp($minH4, $current, $maxH4);
+}
+h5 {
+  margin: 0;
+  font-size: clamp($minH5, $current, $maxH5);
+}
+p {
+  margin: 0;
+  font-size: clamp($minParagraph, 2vw, $maxParagraph);
+}

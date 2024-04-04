@@ -1,0 +1,11 @@
+.logo__container {
+  max-height: 60px;
+  max-width: 60px;
+  position: relative;
+
+  .logo__img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+}

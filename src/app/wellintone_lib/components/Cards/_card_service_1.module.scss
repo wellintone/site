@@ -1,0 +1,100 @@
+.infographic-cards {
+  width: 100%;
+  max-width: 300px;
+  width: 100%;
+  min-width: 20%;
+}
+
+.infographic-cards li {
+  list-style: none;
+  width: 100%;
+
+  height: 430px;
+  padding: 25px 30px;
+  background: $background;
+  position: relative;
+  background-image: linear-gradient(to bottom right, #292929da, #0f0f0f);
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+  box-shadow: inset 0px 13px 14px #0f0f0f,
+    inset -1px -1px 1px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  display: inline-block;
+  margin-bottom: 25px;
+  /* border-radius: 20px; */
+}
+.infographic-cards li h5 {
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+.infographic-cards li h6 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.infographic-cards li.color-1 {
+  border: 10px solid $primary;
+}
+
+.infographic-cards li.color-2 {
+  border: 10px solid $primary;
+}
+
+.infographic-cards li.color-3 {
+  border: 10px solid $primary;
+}
+
+.infographic-cards li.color-4 {
+  border: 10px solid $primary;
+}
+
+.infographic-cards li i {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+.infographic-cards li.color-1 i {
+  color: $primary;
+}
+
+.infographic-cards li.color-2 i {
+  color: $primary;
+}
+
+.infographic-cards li.color-3 i {
+  color: $primary;
+}
+
+.infographic-cards li.color-4 i {
+  color: $primary;
+}
+
+.number-box {
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+  font-size: 23px;
+  border-radius: 60px 60px 0 0;
+  width: 60px;
+  height: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.554),
+    0em 0.05em rgba(255, 255, 255, 0);
+  font-weight: 800;
+  color: #fff;
+}
+.infographic-cards li.color-1 .number-box {
+  background: $primary;
+}
+
+.infographic-cards li.color-2 .number-box {
+  background: $primary;
+}
+
+.infographic-cards li.color-3 .number-box {
+  background: $primary;
+}
+
+.infographic-cards li.color-4 .number-box {
+  background: $primary;
+}

@@ -1,0 +1,43 @@
+.navbarLink {
+  text-decoration: none;
+  color: $on-background;
+  outline: 0;
+  text-align: center;
+  position: relative;
+  left: 10px;
+  cursor: pointer;
+}
+
+.navbarLink:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  bottom: -10px;
+  background-color: $background;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.navbarLink:hover:after {
+  -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.navbarLink:hover:after {
+  width: 10px;
+  left: 50%;
+  height: 10px;
+  background-color: $on-background;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}

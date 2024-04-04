@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Roboto, Playfair_Display } from "next/font/google";
+import "./globals.scss";
+import ThemeProvider from "./context/ThemeContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto_init = Roboto({
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+});
+const playfair_display_init = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-playfair_display",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${roboto_init.variable} ${playfair_display_init.variable} theme-light`}
+      >
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
