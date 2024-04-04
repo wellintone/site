@@ -1,43 +1,36 @@
 .navbarLink {
-  text-decoration: none;
-  color: $on-background;
   outline: 0;
   text-align: center;
   position: relative;
   left: 10px;
   cursor: pointer;
-}
+  transition: width 0.3s ease-in-out;
 
-.navbarLink:after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  height: 2px;
-  bottom: -10px;
-  background-color: $background;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-}
+  &:hover {
+    .bottom__line {
+      width: 100%;
+      transition: width 0.3s ease-in-out;
+    }
+  }
 
-.navbarLink:hover:after {
-  -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  -ms-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  -o-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-}
+  .route {
+    text-decoration: none;
+    color: $on-background;
+  }
 
-.navbarLink:hover:after {
-  width: 10px;
-  left: 50%;
-  height: 10px;
-  background-color: $on-background;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
+  .bottom__line {
+    display: inline-block;
+    width: 0%;
+    background-color: $on-background;
+    position: absolute;
+    left: 0;
+    bottom: -0.5px;
+    height: 1px;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .activated {
+    transition: width 0.3s ease-in-out;
+    width: 100%;
+  }
 }

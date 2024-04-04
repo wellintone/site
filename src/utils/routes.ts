@@ -1,8 +1,8 @@
-import { LinksType } from "../types/links";
+import { LinksType } from "@/app/types/links";
 
 export const Links: LinksType[] = [
-  { route: "home", name: "Home" },
-  { route: "about", name: "About us" },
-  { route: "projects", name: "Projects" },
-  { route: "contacts", name: "Contacts" },
+  { route: "/", name: "Home" },
+  { route: "/about", name: "About" },
+  { route: "/projects", name: "Projects" },
+  { route: "/articles", name: "Articles" },
 ];

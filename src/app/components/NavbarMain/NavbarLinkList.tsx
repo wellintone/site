@@ -6,27 +6,17 @@ interface ICustomNavLink {
   linkColor?: string;
   textBold?: number;
   links: LinksType[];
+  customClass: string;
 }
 
-const NavbarLinkList = ({
-  navRef,
-  links,
-  linkColor,
-  textBold,
-}: ICustomNavLink) => {
+const NavbarLinkList = ({ navRef, links, customClass }: ICustomNavLink) => {
   return (
-    <nav ref={navRef} className="navbarLinkList">
-      <ul
-        className={`links ${linkColor ? "text-" + linkColor : ""} ${
-          textBold ? "font-w-" + textBold : ""
-        }`}
-      >
-        {links.map(({ name, route }: LinksType) => (
-          <NavbarLink key={name} route={route}>
-            {name}
-          </NavbarLink>
-        ))}
-      </ul>
+    <nav ref={navRef} className={`navbarLinkList ${customClass}`}>
+      {links.map(({ name, route }: LinksType) => (
+        <NavbarLink key={name} route={route}>
+          {name}
+        </NavbarLink>
+      ))}
     </nav>
   );
 };

@@ -1,0 +1,73 @@
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.toggle-text {
+  position: relative;
+  right: 5px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.switch {
+  @include customize(theme) {
+    background: getValue(primary);
+  }
+
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.switch::before {
+  background: #fff;
+
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .switch {
+  @include customize(theme) {
+    background-color: getValue(primary);
+  }
+}
+
+input:checked + .switch::before {
+  transform: translateX(26px);
+}
+
+.switch.round {
+  border-radius: 34px;
+}
+
+.switch.round::before {
+  border-radius: 50%;
+}

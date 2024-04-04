@@ -34,7 +34,13 @@
 /* CARDS */
 @import "./wellintone_lib/components/Cards/card_image_hover.module";
 @import "./wellintone_lib/components/Cards/card_service_1.module";
-// utilities (margin, padding, opacity)
+
+/* SWITCH */
+@import "./components/Switch/switch.module";
+
+/* LOGO WELLINTONE */
+@import "./components/Logo/logo.module";
+
 @import "./wellintone_lib/utilities.module";
 
 .parallaxContent {
@@ -71,11 +77,11 @@ section {
 
 /* DA RIMUOVERE */
 
-a:hover,
+/* a:hover,
 a:focus {
   color: $on-background;
   border-bottom: 3px solid;
-}
+} */
 
 /* Home Section */
 .title-group {
@@ -174,99 +180,4 @@ button:hover:not(.outline) {
 p {
   margin: 0;
   line-height: 25px;
-}
-
-/* Contact Section */
-.fab {
-  font-size: 100px;
-  margin-right: 50px;
-  cursor: pointer;
-  @include customize(theme) {
-    color: getValue(primary);
-  }
-}
-
-.fab:hover {
-  @include customize(theme) {
-    color: getValue(on-background);
-  }
-}
-
-/* Dark Mode Toggle */
-.theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  z-index: 100;
-  position: fixed;
-  right: 25px;
-  top: 30px;
-}
-
-.theme-switch-wrapper span {
-  margin-right: 10px;
-  font-size: 1rem;
-}
-
-.toggle-text {
-  position: relative;
-  right: 5px;
-}
-
-.theme-switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
-}
-
-.theme-switch input {
-  display: none;
-}
-
-.slider {
-  @include customize(theme) {
-    background: getValue(primary);
-  }
-  bottom: 0;
-  cursor: pointer;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: 0.4s;
-}
-
-.slider::before {
-  background: #fff;
-
-  bottom: 4px;
-  content: "";
-  height: 26px;
-  left: 4px;
-  position: absolute;
-  transition: 0.4s;
-  width: 26px;
-}
-
-input:checked + .slider {
-  @include customize(theme) {
-    background-color: getValue(primary);
-  }
-}
-
-input:checked + .slider::before {
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round::before {
-  border-radius: 50%;
-}
-
-.fas {
-  font-size: 30px;
-  margin-right: 5px;
 }

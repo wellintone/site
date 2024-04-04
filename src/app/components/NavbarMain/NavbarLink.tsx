@@ -1,13 +1,23 @@
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 interface ICustomNavLink {
   route: string;
   children: string | JSX.Element | JSX.Element[];
 }
 
 const NavbarLink = ({ route, children }: ICustomNavLink) => {
+  const currentPath = usePathname();
+
   return (
-    <li className={"navbarLink font-sm"}>
-      <a href={`#${route}`}>{children}</a>
-    </li>
+    <div className="navbarLink">
+      <Link className="route" href={`${route}`}>
+        {children}
+      </Link>
+      <span
+        className={`bottom__line ${currentPath === route ? "activated" : ""}`}
+      ></span>
+    </div>
   );
 };
 

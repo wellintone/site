@@ -1,0 +1,54 @@
+.logo {
+  position: relative;
+  border-top: 15px solid black;
+  border-right: 15px solid black;
+  border-left: 15px solid black;
+  border-bottom: 15px solid black;
+  border-radius: 100%;
+  min-width: 70px;
+  min-height: 70px;
+  margin: 50px auto;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+
+  &:hover {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+    transition: animation 1s ease-in-out;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: left;
+    transform: translate(0%, -50%) rotate(-45deg);
+    width: 40px;
+    height: 15px;
+    background-color: $primary;
+    box-shadow: $box-shadow-thin;
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transition: 1s ease-in-out;
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transition: 1s ease-in-out;
+  }
+}

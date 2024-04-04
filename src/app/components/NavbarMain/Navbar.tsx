@@ -1,11 +1,16 @@
 "use client";
 
-import Logo from "./Logo";
 import Hamburger from "./Hamburger";
 import { useRef, useState } from "react";
 import { Links } from "@/utils/routes";
 import NavbarLinkList from "./NavbarLinkList";
 import logo from "../../../../public/img/logo.png";
+import Switch from "../Switch/Switch";
+import LogoWellintone from "../Logo/LogoWellintone";
+import Dribble from "../Svgs/Dribble";
+import Twitter from "../Svgs/Twitter";
+import Linkedin from "../Svgs/Linkedin";
+import Pinterest from "../Svgs/Pinterest";
 
 export type INavbar = {
   type?: string;
@@ -28,7 +33,6 @@ function Navbar({ type, linkColor, textBold, height, width }: INavbar) {
   return (
     <header className={`Navbar ${type ? "Navbar-" + type : ""} `}>
       {/* Logo */}
-      <Logo route="/" src={logo} alt="logo Wellintone" />
 
       {/* NavbarList */}
       <NavbarLinkList
@@ -36,10 +40,23 @@ function Navbar({ type, linkColor, textBold, height, width }: INavbar) {
         navRef={navRef}
         linkColor={linkColor}
         textBold={textBold}
+        customClass="justify-start"
       />
 
+      <div className="logo__container">
+        <LogoWellintone />
+      </div>
       {/* Contact Us */}
-      {/*  <Button>Contattaci</Button> */}
+
+      <div className="socials__container">
+        <Dribble />
+        <Twitter />
+        <Linkedin />
+        <Pinterest />
+      </div>
+
+      {/* DARK AND LIGHT MODE */}
+      <Switch />
 
       {/* Hamburger */}
       <Hamburger onToggleMenu={showNavbar} />

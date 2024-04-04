@@ -10,7 +10,7 @@ $grid-gaps: (
   "5": 50px,
 );
 
-$layout-values: flex-start, flex-end, center, space-between, space-around;
+$layout-values: start, end, center, space-between, space-around;
 $align-values: stretch, center, start, end, justify;
 
 // base layout classes
@@ -119,7 +119,7 @@ $align-values: stretch, center, start, end, justify;
 @each $val in $layout-values {
   .justify-#{$val} {
     display: flex;
-    justify-content: $val;
+    justify-content: $val !important;
   }
 }
 

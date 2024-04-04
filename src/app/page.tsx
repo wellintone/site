@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main>
-      <div className="theme-switch-wrapper">
+      {/* <div className="theme-switch-wrapper">
         <span id="toggle-icon">
           <span className="toggle-text">
             {theme ? "Light Mode" : "Dark Mode"}
@@ -28,8 +28,8 @@ export default function Home() {
           />
           <div className="slider round"></div>
         </label>
-      </div>
-      <Navbar type="primary-transparent-0" linkColor="white" textBold={800} />
+      </div> */}
+      <Navbar linkColor="white" textBold={800} />
 
       <section id="home">
         <div className="title-group">
