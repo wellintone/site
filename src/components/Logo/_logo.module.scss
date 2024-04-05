@@ -1,12 +1,12 @@
 .logo {
   position: relative;
-  border-top: 15px solid black;
-  border-right: 15px solid black;
-  border-left: 15px solid black;
-  border-bottom: 15px solid black;
+  border-top: 9px solid $on-background;
+  border-right: 9px solid $on-background;
+  border-left: 9px solid $on-background;
+  border-bottom: 9px solid $on-background;
   border-radius: 100%;
-  min-width: 70px;
-  min-height: 70px;
+  min-width: 50px;
+  min-height: 50px;
   margin: 50px auto;
   cursor: pointer;
   transition: 1s ease-in-out;
@@ -27,8 +27,8 @@
     left: 50%;
     transform-origin: left;
     transform: translate(0%, -50%) rotate(-45deg);
-    width: 40px;
-    height: 15px;
+    width: 30px;
+    height: 9px;
     background-color: $primary;
     box-shadow: $box-shadow-thin;
   }

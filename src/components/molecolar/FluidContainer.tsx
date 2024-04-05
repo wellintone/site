@@ -2,7 +2,7 @@ import React, { Children } from "react";
 
 export type IFluidContainer = {
   children: React.ReactNode[] | React.ReactNode;
-  customClass?: string;
+  classNameChildren?: string;
   direction?: string;
   breakPoints?: string;
   style?: any;
@@ -11,7 +11,7 @@ export type IFluidContainer = {
 const FluidContainer = ({
   style,
   children,
-  customClass,
+  classNameChildren,
   breakPoints,
   direction = "row",
 }: IFluidContainer) => {
@@ -26,7 +26,7 @@ const FluidContainer = ({
             <div
               key={index}
               className={`justify-center align-center col-12-xs col-6-sm col-4-md col-3-xl  ${
-                customClass || ""
+                classNameChildren || ""
               }`}
             >
               {c}
@@ -38,7 +38,7 @@ const FluidContainer = ({
           className={` ${
             direction || "row"
           }  justify-center align-center col-12-xs col-6-sm col-4-md col-3-xl  ${
-            customClass || ""
+            classNameChildren || ""
           }`}
         >
           {children}

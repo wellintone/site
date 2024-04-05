@@ -56,7 +56,7 @@ function Navbar({ type, linkColor, textBold, height, width }: INavbar) {
       </div>
 
       {/* DARK AND LIGHT MODE */}
-      <Switch />
+      {/* <Switch /> */}
 
       {/* Hamburger */}
       <Hamburger onToggleMenu={showNavbar} />

@@ -1,4 +1,5 @@
 "use client";
+import { useOnScreen } from "@/hooks/useOnScreen";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 export type IAnimate = {
   children: React.ReactNode | React.ReactNode[];
@@ -18,31 +19,9 @@ const Animate = ({
   customClass,
   delay = 0,
 }: IAnimate) => {
-  const [inView, setInView] = useState(false);
-
   const animateRef = useRef(null);
-  const options = useMemo(() => {
-    return {
-      root: null,
-      threshold: 0,
-      delay: delay,
-    };
-  }, [delay]);
-  const observer = useMemo(() => {
-    const ob = new IntersectionObserver(function (entries, observer) {
-      setTimeout(() => {
-        entries.forEach((entry) => {
-          setInView(entry.isIntersecting);
-        });
-      }, delay * 100);
-    }, options);
+  const isOnScreen = useOnScreen(animateRef);
 
-    return ob;
-  }, [delay, options]);
-
-  useEffect(() => {
-    observer.observe(animateRef.current as any);
-  }, [observer]);
   return (
     <div
       className={`text-center align-center justify-center `}
@@ -55,7 +34,7 @@ const Animate = ({
       <div
         ref={animateRef}
         className={`justify-center align-center ${customClass || ""} ${
-          inView ? "show-animate" : "animate"
+          isOnScreen ? "show-animate" : "animate"
         } `}
       >
         {children}

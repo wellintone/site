@@ -16,6 +16,9 @@
 //fonts
 @import "../wellintone_lib/fonts.module";
 
+// animation
+@import "../wellintone_lib/animations/word-stagger.module";
+
 //components
 
 /* NAVBAR */
@@ -117,7 +120,7 @@ img {
   margin-top: 15px;
   margin-bottom: 50px;
 }
-
+/* 
 button {
   min-width: 100px;
   height: 40px;
@@ -127,7 +130,7 @@ button {
   border: 2px solid $primary;
   font-size: 15px;
   outline: none;
-}
+} */
 
 button:disabled {
   opacity: 0.4;

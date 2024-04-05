@@ -4,9 +4,12 @@
   display: inline-block;
   border: 0;
   padding: $base-padding $base-padding * 2;
-  border-radius: $base-border-radius;
-  background-color: $bg-color;
+  border-radius: $base-border-radius - 15;
   max-width: fit-content;
+  @include customize(theme) {
+    background-color: getValue(primary);
+    color: getValue(on-primary);
+  }
 }
 
 .btn {

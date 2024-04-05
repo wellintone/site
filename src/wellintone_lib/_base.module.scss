@@ -38,6 +38,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: $on-background;
 }
 
 hr {
@@ -50,14 +51,9 @@ img {
 }
 
 button {
-  @include customize(theme) {
-    background-color: getValue(primary);
-    color: getValue(on-primary);
-  }
   border: 0;
-  border-radius: $base-border-radius;
-  padding: $base-padding;
 }
+
 .error {
   color: $error;
   border-color: $error;

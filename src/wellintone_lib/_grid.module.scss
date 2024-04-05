@@ -17,6 +17,25 @@ $align-values: stretch, center, start, end, justify;
 
 .fluidcontainer {
   width: 100%;
+
+  @include xs {
+    padding: $base-padding * 2;
+  }
+  @include sm {
+    padding: $base-padding * 3;
+  }
+  @include md {
+    padding: $base-padding * 3;
+  }
+  @include lg {
+    padding: $base-padding * 4;
+  }
+  @include xl {
+    padding: $base-padding * 6;
+  }
+  @include xxl {
+    padding: $base-padding * 8;
+  }
 }
 .container {
   min-width: 100%;
