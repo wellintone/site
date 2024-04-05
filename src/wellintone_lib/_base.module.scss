@@ -54,6 +54,16 @@ button {
   border: 0;
 }
 
+.border-solid {
+  border-style: solid;
+}
+.border-dashed {
+  border-style: dashed;
+}
+.border-dotted {
+  border-style: dotted;
+}
+
 .error {
   color: $error;
   border-color: $error;

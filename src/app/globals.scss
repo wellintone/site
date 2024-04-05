@@ -140,7 +140,7 @@ button:disabled {
 button:hover:not(.outline) {
   filter: brightness(110%);
 }
-
+/* 
 .b-primary {
   background: $primary;
   color: $on-primary;
@@ -171,7 +171,7 @@ button:hover:not(.outline) {
     background: getValue(primary);
     color: getValue(on-primary);
   }
-}
+} */
 
 .text-box {
   width: 40%;

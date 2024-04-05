@@ -1,0 +1,26 @@
+@use "sass:math";
+
+$font-sizes: (
+  "font-size": (
+    "prefix": "font",
+    "values": (
+      "xs": $font-size-xs,
+      "sm": $font-size-sm,
+      "m": $font-size-m,
+      "lg": $font-size-lg,
+      "xl": $font-size-xl,
+      "xxl": $font-size-xxl,
+    ),
+  ),
+);
+
+@each $property, $map in $font-sizes {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}-#{$k} {
+      #{$property}: $v;
+    }
+  }
+}
