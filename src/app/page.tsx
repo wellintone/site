@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import ProfilePicture from "../../public/img/developer-pic-1.png";
-import AnimatedText from "@/components/Animation/AnimatedText";
+import AnimatedText from "@/animation/AnimatedText";
 import FluidContainer from "@/components/molecolar/FluidContainer";
 import Link from "next/link";
 import Button from "@/components/button";
@@ -18,16 +18,19 @@ const Home = () => {
           />
         </div>
         <div>
-          <AnimatedText className="font-xl line-h-10 font-w-700 ">
+          <AnimatedText
+            className="font-lg line-h-8 font-w-700"
+            onLoadPage={true}
+          >
             Turning Vision Into Reality With Code And Design.
           </AnimatedText>
-          <AnimatedText className="font-xs" delay={10} bouncingY={true}>
-            <div className="justify-start text-start pt-1">
+          <AnimatedText delay={10} bouncingY={true}>
+            <p className="justify-start text-start pt-1">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
               labore explicabo libero commodi sequi delectus saepe, et suscipit
               veritatis aliquid itaque, voluptatum dolores, dolorum ut
               aspernatur. Nostrum dolorum vero tempora!
-            </div>
+            </p>
           </AnimatedText>
           <AnimatedText
             className="font-xs mt-2 align-center"

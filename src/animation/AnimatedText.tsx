@@ -15,6 +15,7 @@ interface IAnimatedText {
   delay?: number;
   bouncingY?: boolean;
   bouncingX?: boolean;
+  onLoadPage?: boolean;
 }
 
 const AnimatedText: React.FC<IAnimatedText> = ({
@@ -23,17 +24,10 @@ const AnimatedText: React.FC<IAnimatedText> = ({
   delay = 0,
   bouncingY = false,
   bouncingX = false,
+  onLoadPage = false,
 }) => {
   const animateRef = useRef(null);
   const isOnScreen = useOnScreen(animateRef);
-
-  const hasBouncing = {
-    "--onBouncing": bouncingX
-      ? "bouncingX"
-      : "" || bouncingY
-      ? "bouncingY"
-      : "",
-  } as React.CSSProperties;
 
   const checkCustomClass = () => {
     let customClass = "wordAnimated";
@@ -48,10 +42,15 @@ const AnimatedText: React.FC<IAnimatedText> = ({
     return customClass;
   };
 
+  console.log("IS", isOnScreen);
   return (
     <div
       className={`w-full align-center justify-start ${
-        isOnScreen ? "show-animated-text" : "animated-text"
+        onLoadPage
+          ? "show-animated-text"
+          : isOnScreen
+          ? "show-animated-text"
+          : "animated-text"
       }`}
     >
       {typeof children == "string" ? (
@@ -60,9 +59,7 @@ const AnimatedText: React.FC<IAnimatedText> = ({
             <span
               ref={animateRef}
               key={word + "-" + index}
-              style={
-                { "--delay": index, ...hasBouncing } as React.CSSProperties
-              }
+              style={{ "--delay": index } as React.CSSProperties}
               className={`
               display-i-b ${className} text-on-background ${checkCustomClass()}`}
             >
@@ -73,7 +70,7 @@ const AnimatedText: React.FC<IAnimatedText> = ({
       ) : (
         <span
           ref={animateRef}
-          style={{ "--delay": delay, ...hasBouncing } as React.CSSProperties}
+          style={{ "--delay": delay } as React.CSSProperties}
           className={`display-i-b ${className} text-on-background ${checkCustomClass()}`}
         >
           {children}

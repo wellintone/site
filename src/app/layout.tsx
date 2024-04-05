@@ -3,6 +3,7 @@ import { Roboto, Playfair_Display } from "next/font/google";
 import "./globals.scss";
 import ThemeProvider from "../context/ThemeContext";
 import Navbar from "@/components/NavbarMain/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const roboto_init = Roboto({
   subsets: ["latin"],
@@ -30,10 +31,11 @@ export default function RootLayout({
       <body
         className={`${roboto_init.variable} ${playfair_display_init.variable} theme-light`}
       >
-        <Navbar linkColor="white" textBold={800} />
-        <ThemeProvider>{children}</ThemeProvider>
-
-        <div className="h-full-v">SUCA</div>
+        <ThemeProvider>
+          <Navbar linkColor="white" textBold={800} />
+          {children}
+          <Footer></Footer>
+        </ThemeProvider>
       </body>
     </html>
   );
