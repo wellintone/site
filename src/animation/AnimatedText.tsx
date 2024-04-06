@@ -1,13 +1,7 @@
 "use client";
 
 import { useOnScreen } from "@/hooks/useOnScreen";
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { useRef } from "react";
 
 interface IAnimatedText {
   children: string | React.ReactNode | React.ReactNode[];
@@ -42,7 +36,33 @@ const AnimatedText: React.FC<IAnimatedText> = ({
     return customClass;
   };
 
-  console.log("IS", isOnScreen);
+  {
+    /* <span
+              ref={animateRef}
+              key={word + "-" + index}
+              style={{ "--delay": index } as React.CSSProperties}
+              className={`
+              display-i-b ${className} text-on-background ${checkCustomClass()}`}
+            >
+              {word}&nbsp;
+            </span> */
+  }
+
+  /* SINGLE WORD */
+  /* return word?.split("").map((w, i) => {
+            return (
+              <span
+                ref={animateRef}
+                key={w + "-" + i}
+                style={{ "--delay": i } as React.CSSProperties}
+                className={`
+                      display-i-b ${className} text-on-background ${checkCustomClass()}`}
+              >
+                {w}&nbsp;
+              </span>
+            );
+          }); */
+
   return (
     <div
       className={`w-full align-center justify-start ${

@@ -9,7 +9,7 @@ import Button from "@/components/button";
 const Home = () => {
   return (
     <main className="home align-center justify-center w-full">
-      <FluidContainer classNameChildren="w-1I2 display-f align-center row justify-between">
+      <FluidContainer minWidth="22rem" className="pt-0">
         <div className="w-full">
           <Image
             src={ProfilePicture}
@@ -17,15 +17,15 @@ const Home = () => {
             className="w-full h-auto"
           />
         </div>
-        <div>
+        <div className="column">
           <AnimatedText
-            className="font-lg line-h-8 font-w-700"
+            className="font-lg line-h-6 font-w-700 pb-2"
             onLoadPage={true}
           >
             Turning Vision Into Reality With Code And Design.
           </AnimatedText>
           <AnimatedText delay={10} bouncingY={true}>
-            <p className="justify-start text-start pt-1">
+            <p className="justify-start text-start">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
               labore explicabo libero commodi sequi delectus saepe, et suscipit
               veritatis aliquid itaque, voluptatum dolores, dolorum ut
@@ -33,7 +33,7 @@ const Home = () => {
             </p>
           </AnimatedText>
           <AnimatedText
-            className="font-xs mt-2 align-center"
+            className="font-xs align-center pt-2"
             delay={10}
             bouncingX={true}
           >

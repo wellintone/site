@@ -17,6 +17,12 @@ $align-values: stretch, center, start, end, justify;
 
 .fluidcontainer {
   width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--minWidth), 100%), 1fr)
+  );
 
   @include xs {
     padding: $base-padding * 2;

@@ -56,6 +56,28 @@ $padding-width: (
       "5": $base-padding * 8,
     ),
   ),
+  "padding-y": (
+    "prefix": "py",
+    "values": (
+      "0": 0,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
+    ),
+  ),
+  "padding-x": (
+    "prefix": "px",
+    "values": (
+      "0": 0,
+      "1": $base-padding,
+      "2": $base-padding * 2,
+      "3": $base-padding * 4,
+      "4": $base-padding * 6,
+      "5": $base-padding * 8,
+    ),
+  ),
 );
 
 @each $property, $map in $padding-width {
@@ -63,8 +85,20 @@ $padding-width: (
   $values: map-get($map, "values");
 
   @each $k, $v in $values {
-    .#{$prefix}-#{$k} {
-      #{$property}: $v;
+    @if ($property == "padding-y") {
+      .py-#{$k} {
+        padding-left: $v;
+        padding-right: $v;
+      }
+    } @else if($property == "padding-x") {
+      .px-#{$k} {
+        padding-top: $v;
+        padding-bottom: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
     }
   }
 }
