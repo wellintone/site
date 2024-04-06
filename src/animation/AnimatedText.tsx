@@ -1,15 +1,18 @@
 "use client";
 
 import { useOnScreen } from "@/hooks/useOnScreen";
+import { ElementType, HTMLAttributes, FC } from "react";
 import React, { useRef } from "react";
 
-interface IAnimatedText {
+interface IAnimatedText extends HTMLAttributes<HTMLOrSVGElement> {
   children: string | React.ReactNode | React.ReactNode[];
   className?: string;
   delay?: number;
   bouncingY?: boolean;
   bouncingX?: boolean;
   onLoadPage?: boolean;
+  staggerChildren?: boolean;
+  as?: ElementType;
 }
 
 const AnimatedText: React.FC<IAnimatedText> = ({
@@ -19,12 +22,15 @@ const AnimatedText: React.FC<IAnimatedText> = ({
   bouncingY = false,
   bouncingX = false,
   onLoadPage = false,
+  staggerChildren = false,
+  as: Tag = "p",
 }) => {
   const animateRef = useRef(null);
   const isOnScreen = useOnScreen(animateRef);
 
   const checkCustomClass = () => {
     let customClass = "wordAnimated";
+
     if (bouncingY) {
       customClass = "wordAnimated-bounceY";
     } else if (bouncingX) {
@@ -36,32 +42,44 @@ const AnimatedText: React.FC<IAnimatedText> = ({
     return customClass;
   };
 
-  {
-    /* <span
-              ref={animateRef}
-              key={word + "-" + index}
-              style={{ "--delay": index } as React.CSSProperties}
-              className={`
-              display-i-b ${className} text-on-background ${checkCustomClass()}`}
-            >
-              {word}&nbsp;
-            </span> */
-  }
-
-  /* SINGLE WORD */
-  /* return word?.split("").map((w, i) => {
-            return (
-              <span
-                ref={animateRef}
-                key={w + "-" + i}
-                style={{ "--delay": i } as React.CSSProperties}
-                className={`
-                      display-i-b ${className} text-on-background ${checkCustomClass()}`}
-              >
-                {w}&nbsp;
-              </span>
-            );
-          }); */
+  const typeOfAnimatedText = () => {
+    if (typeof children == "string" && staggerChildren) {
+      return children?.split(" ").map((word, index) => {
+        return (
+          <span
+            ref={animateRef}
+            key={word + "-" + index}
+            style={{ "--delay": index } as React.CSSProperties}
+            className={`
+      display-i-b text-on-background ${checkCustomClass()}`}
+          >
+            <Tag className={className}>{word}&nbsp;</Tag>
+          </span>
+        );
+      });
+    } else if (typeof children == "string") {
+      return (
+        <span
+          ref={animateRef}
+          style={{ "--delay": delay } as React.CSSProperties}
+          className={`
+      display-i-b text-on-background ${checkCustomClass()}`}
+        >
+          <Tag className={className}>{children}&nbsp;</Tag>
+        </span>
+      );
+    } else {
+      return (
+        <span
+          ref={animateRef}
+          style={{ "--delay": delay } as React.CSSProperties}
+          className={`display-i-b text-on-background ${className} ${checkCustomClass()}`}
+        >
+          {children}
+        </span>
+      );
+    }
+  };
 
   return (
     <div
@@ -73,29 +91,7 @@ const AnimatedText: React.FC<IAnimatedText> = ({
           : "animated-text"
       }`}
     >
-      {typeof children == "string" ? (
-        children?.split(" ").map((word, index) => {
-          return (
-            <span
-              ref={animateRef}
-              key={word + "-" + index}
-              style={{ "--delay": index } as React.CSSProperties}
-              className={`
-              display-i-b ${className} text-on-background ${checkCustomClass()}`}
-            >
-              {word}&nbsp;
-            </span>
-          );
-        })
-      ) : (
-        <span
-          ref={animateRef}
-          style={{ "--delay": delay } as React.CSSProperties}
-          className={`display-i-b ${className} text-on-background ${checkCustomClass()}`}
-        >
-          {children}
-        </span>
-      )}
+      {typeOfAnimatedText()}
     </div>
   );
 };

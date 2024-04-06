@@ -1,82 +1,42 @@
 @use "sass:math";
 
+$values: (
+  "0": 0,
+  "1": $base-padding,
+  "2": $base-padding * 2,
+  "3": $base-padding * 4,
+  "4": $base-padding * 6,
+  "5": $base-padding * 8,
+);
+
 $margin-width: (
   "margin": (
     "prefix": "m",
-    "values": (
-      "0": 0,
-      "1": $base-margin,
-      "2": $base-margin * 2,
-      "3": $base-margin * 4,
-      "4": $base-margin * 6,
-      "5": $base-margin * 8,
-    ),
+    "values": $values,
   ),
   "margin-left": (
     "prefix": "ml",
-    "values": (
-      "0": 0,
-      "1": $base-margin,
-      "2": $base-margin * 2,
-      "3": $base-margin * 4,
-      "4": $base-margin * 6,
-      "5": $base-margin * 8,
-    ),
+    "values": $values,
   ),
   "margin-right": (
     "prefix": "mr",
-    "values": (
-      "0": 0,
-      "1": $base-margin,
-      "2": $base-margin * 2,
-      "3": $base-margin * 4,
-      "4": $base-margin * 6,
-      "5": $base-margin * 8,
-    ),
+    "values": $values,
   ),
   "margin-top": (
     "prefix": "mt",
-    "values": (
-      "0": 0,
-      "1": $base-margin,
-      "2": $base-margin * 2,
-      "3": $base-margin * 4,
-      "4": $base-margin * 6,
-      "5": $base-margin * 8,
-    ),
+    "values": $values,
   ),
   "margin-bottom": (
     "prefix": "mb",
-    "values": (
-      "0": 0,
-      "1": $base-margin,
-      "2": $base-margin * 2,
-      "3": $base-margin * 4,
-      "4": $base-margin * 6,
-      "5": $base-margin * 8,
-    ),
+    "values": $values,
   ),
   "margin-y": (
     "prefix": "my",
-    "values": (
-      "0": 0,
-      "1": $base-margin,
-      "2": $base-margin * 2,
-      "3": $base-margin * 4,
-      "4": $base-margin * 6,
-      "5": $base-margin * 8,
-    ),
+    "values": $values,
   ),
   "margin-x": (
     "prefix": "mx",
-    "values": (
-      "0": 0,
-      "1": $base-margin,
-      "2": $base-margin * 2,
-      "3": $base-margin * 4,
-      "4": $base-margin * 6,
-      "5": $base-margin * 8,
-    ),
+    "values": $values,
   ),
 );
 
@@ -90,14 +50,26 @@ $margin-width: (
         margin-left: $v;
         margin-right: $v;
       }
+      .-my-#{$k} {
+        margin-left: -$v;
+        margin-right: -$v;
+      }
     } @else if($property == "margin-x") {
       .mx-#{$k} {
         margin-top: $v;
         margin-bottom: $v;
       }
-    }
-    .#{$prefix}-#{$k} {
-      #{$property}: $v;
+      .-mx-#{$k} {
+        margin-top: -$v;
+        margin-bottom: -$v;
+      }
+    } @else {
+      .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+      .-#{$prefix}-#{$k} {
+        #{$property}: -$v;
+      }
     }
   }
 }

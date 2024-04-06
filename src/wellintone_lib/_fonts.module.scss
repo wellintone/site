@@ -1,5 +1,5 @@
 /* H1 */
-$maxH1: 6.25rem;
+$maxH1: 5.25rem;
 $minH1: 3.125rem;
 /* H2 */
 $maxH2: 2.875rem;
@@ -22,8 +22,6 @@ $current: 10vw;
 h1 {
   font-family: var(--font-playfair_display);
   font-size: clamp($minH1, $current, $maxH1);
-  line-height: 5.9375rem;
-  margin-bottom: 1.25rem;
   @include customize(theme) {
     color: getValue(on-background);
   }

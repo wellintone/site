@@ -2,29 +2,29 @@
 
 $baseValue: (
   "full": 100%,
-  "screen": 100vh,
+  "screen": 100vw,
   "auto": auto,
   "fit": fit-content,
   "max": max-content,
   "min": min-content,
 );
-$heights: (
-  "height": (
-    "prefix": "h",
+$widths: (
+  "width": (
+    "prefix": "w",
     "values": $baseValue,
   ),
 
-  "min-height": (
-    "prefix": "h-min",
+  "min-width": (
+    "prefix": "w-min",
     "values": $baseValue,
   ),
-  "max-height": (
-    "prefix": "h-max",
+  "max-width": (
+    "prefix": "w-max",
     "values": $baseValue,
   ),
 );
 
-@each $property, $map in $heights {
+@each $property, $map in $widths {
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
 
@@ -37,18 +37,18 @@ $heights: (
 
 @for $i from 1 through 9000 {
   .h-max\[#{$i}px\] {
-    max-height: calc(#{$i} * 1px);
+    max-width: calc(#{$i} * 1px);
   }
   .h-min\[#{$i}px\] {
-    min-height: calc(#{$i} * 1px);
+    min-width: calc(#{$i} * 1px);
   }
   .h\[#{$i}px\] {
-    height: calc(#{$i} * 1px);
+    width: calc(#{$i} * 1px);
   }
 
   @if ($i <= 99) {
     .h\[#{$i}\%\] {
-      height: calc(#{$i}* 1%);
+      width: calc(#{$i}* 1%);
     }
   }
 }

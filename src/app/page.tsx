@@ -5,39 +5,48 @@ import AnimatedText from "@/animation/AnimatedText";
 import FluidContainer from "@/components/molecolar/FluidContainer";
 import Link from "next/link";
 import Button from "@/components/button";
+import AnimateFadeIn from "@/animation/AnimateFadeIn";
+import HireMe from "@/components/HireMe/HireMe";
 
 const Home = () => {
   return (
     <main className="home align-center justify-center w-full">
       <FluidContainer minWidth="22rem" className="pt-0">
-        <div className="w-full">
+        <AnimateFadeIn className="w-full" fadeIn="scaleDown">
           <Image
             src={ProfilePicture}
             alt="Wellintone"
             className="w-full h-auto"
           />
-        </div>
-        <div className="column">
+        </AnimateFadeIn>
+        <div className="column gap-1">
           <AnimatedText
-            className="font-lg line-h-6 font-w-700 pb-2"
+            staggerChildren={true}
             onLoadPage={true}
+            bouncingY={true}
+            as="h1"
+            className="text-start line-h-10 -mt-1"
           >
             Turning Vision Into Reality With Code And Design.
           </AnimatedText>
-          <AnimatedText delay={10} bouncingY={true}>
-            <p className="justify-start text-start">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
-              labore explicabo libero commodi sequi delectus saepe, et suscipit
-              veritatis aliquid itaque, voluptatum dolores, dolorum ut
-              aspernatur. Nostrum dolorum vero tempora!
-            </p>
+
+          <AnimatedText
+            bouncingY={true}
+            delay={10}
+            as="p"
+            className="justify-start text-start"
+          >
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
+            labore explicabo libero commodi sequi delectus saepe, et suscipit
+            veritatis aliquid itaque, voluptatum dolores, dolorum ut aspernatur.
+            Nostrum dolorum vero tempora!
           </AnimatedText>
           <AnimatedText
-            className="font-xs align-center pt-2"
+            className="font-xs align-center pt-1"
             delay={10}
-            bouncingX={true}
+            bouncingY={true}
           >
-            <Button type="btn-primary" customClass="font-w-900 font-xs">
+            <Button type="btn-primary" className="font-w-900 font-xs">
               <Link href={"/dummy.pdf"} target={"_blank"} download={true}>
                 Resume
               </Link>
@@ -48,6 +57,7 @@ const Home = () => {
           </AnimatedText>
         </div>
       </FluidContainer>
+      <HireMe />
     </main>
   );
 };

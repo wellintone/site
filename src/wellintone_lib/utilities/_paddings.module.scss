@@ -1,82 +1,42 @@
 @use "sass:math";
 
+$values: (
+  "0": 0,
+  "1": $base-padding,
+  "2": $base-padding * 2,
+  "3": $base-padding * 4,
+  "4": $base-padding * 6,
+  "5": $base-padding * 8,
+);
+
 $padding-width: (
   "padding": (
     "prefix": "p",
-    "values": (
-      "0": 0,
-      "1": $base-padding,
-      "2": $base-padding * 2,
-      "3": $base-padding * 4,
-      "4": $base-padding * 6,
-      "5": $base-padding * 8,
-    ),
+    "values": $values,
   ),
   "padding-left": (
     "prefix": "pl",
-    "values": (
-      "0": 0,
-      "1": $base-padding,
-      "2": $base-padding * 2,
-      "3": $base-padding * 4,
-      "4": $base-padding * 6,
-      "5": $base-padding * 8,
-    ),
+    "values": $values,
   ),
   "padding-right": (
     "prefix": "pr",
-    "values": (
-      "0": 0,
-      "1": $base-padding,
-      "2": $base-padding * 2,
-      "3": $base-padding * 4,
-      "4": $base-padding * 6,
-      "5": $base-padding * 8,
-    ),
+    "values": $values,
   ),
   "padding-top": (
     "prefix": "pt",
-    "values": (
-      "0": 0,
-      "1": $base-padding,
-      "2": $base-padding * 2,
-      "3": $base-padding * 4,
-      "4": $base-padding * 6,
-      "5": $base-padding * 8,
-    ),
+    "values": $values,
   ),
   "padding-bottom": (
     "prefix": "pb",
-    "values": (
-      "0": 0,
-      "1": $base-padding,
-      "2": $base-padding * 2,
-      "3": $base-padding * 4,
-      "4": $base-padding * 6,
-      "5": $base-padding * 8,
-    ),
+    "values": $values,
   ),
   "padding-y": (
     "prefix": "py",
-    "values": (
-      "0": 0,
-      "1": $base-padding,
-      "2": $base-padding * 2,
-      "3": $base-padding * 4,
-      "4": $base-padding * 6,
-      "5": $base-padding * 8,
-    ),
+    "values": $values,
   ),
   "padding-x": (
     "prefix": "px",
-    "values": (
-      "0": 0,
-      "1": $base-padding,
-      "2": $base-padding * 2,
-      "3": $base-padding * 4,
-      "4": $base-padding * 6,
-      "5": $base-padding * 8,
-    ),
+    "values": $values,
   ),
 );
 
@@ -90,13 +50,24 @@ $padding-width: (
         padding-left: $v;
         padding-right: $v;
       }
+      .-py-#{$k} {
+        padding-left: $v;
+        padding-right: $v;
+      }
     } @else if($property == "padding-x") {
       .px-#{$k} {
         padding-top: $v;
         padding-bottom: $v;
       }
+      .-px-#{$k} {
+        padding-top: $v;
+        padding-bottom: $v;
+      }
     } @else {
       .#{$prefix}-#{$k} {
+        #{$property}: $v;
+      }
+      .-#{$prefix}-#{$k} {
         #{$property}: $v;
       }
     }

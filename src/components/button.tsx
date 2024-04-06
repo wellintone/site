@@ -3,18 +3,18 @@ import React from "react";
 export type IButton = {
   type?: string;
   textColor?: string;
-  customClass?: string;
+  className?: string;
   children: React.ReactNode;
 };
 
 const Button = ({
   type = "btn-secondary",
   textColor = "text-white",
-  customClass,
+  className,
   children,
 }: IButton) => {
   return (
-    <button className={`${type} ${textColor} ${customClass} font-w-900`}>
+    <button className={`${type} ${textColor} ${className} font-w-900`}>
       {children}
     </button>
   );

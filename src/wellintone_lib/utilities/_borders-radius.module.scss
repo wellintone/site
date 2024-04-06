@@ -24,3 +24,9 @@ $border-radius: (
     }
   }
 }
+
+@for $i from 1 through 300 {
+  .b-radius-#{$i} {
+    border-radius: #{$i}px;
+  }
+}

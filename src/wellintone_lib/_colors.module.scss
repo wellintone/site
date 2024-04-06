@@ -11,10 +11,6 @@
     background-color: $val;
   }
 
-  .border-#{$key} {
-    border-color: $val;
-  }
-
   @if ($val != #000000 and $val != #ffffff) {
     @for $i from 1 through 9 {
       .text-#{$key}-light-#{$i} {

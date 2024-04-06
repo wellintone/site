@@ -1,26 +1,21 @@
 // reset
 /* @import "../wellintone_lib/reset.module"; */
-// variables & functions
+
 @import "../wellintone_lib/functions.module";
 @import "../wellintone_lib/variables.module";
-// base
+
 @import "../wellintone_lib/base.module";
-// breakpoints
 @import "../wellintone_lib/breakpoint.module";
-// grid
 @import "../wellintone_lib/grid.module";
 
-// colors
 @import "../wellintone_lib/colors.module";
 
-//fonts
 @import "../wellintone_lib/fonts.module";
 
-// animation
 @import "../wellintone_lib/animations/word-stagger.module";
 @import "../wellintone_lib/animations/parallax.module";
-
-//components
+@import "../wellintone_lib/animations/spin.module";
+@import "../wellintone_lib/animations/fade-in.module";
 
 /* NAVBAR */
 @import "../wellintone_lib/components/Navbar/navbar.module";
@@ -49,3 +44,9 @@
 @import "../app/\(routes\)/about/about.module";
 
 @import "../wellintone_lib/utilities.module";
+
+.hire_container {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}

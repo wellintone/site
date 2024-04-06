@@ -1,5 +1,7 @@
+const path = require("path");
+
 module.exports = {
-  webpack(config) {
+  webpack(config, { dev }) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")
@@ -25,6 +27,10 @@ module.exports = {
     fileLoaderRule.exclude = /\.svg$/i;
 
     return config;
+  },
+
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
   },
 
   // ...other config
