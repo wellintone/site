@@ -42,32 +42,25 @@ const AnimatedText: React.FC<IAnimatedText> = ({
     return customClass;
   };
 
+  const tags = (word: string, index?: number, delay?: number) => (
+    <Tag
+      ref={animateRef}
+      key={word + "-" + index}
+      style={{ "--delay": index || delay } as React.CSSProperties}
+      className={`${className}
+display-i-b text-on-background ${checkCustomClass()}`}
+    >
+      {word}&nbsp;
+    </Tag>
+  );
+
   const typeOfAnimatedText = () => {
     if (typeof children == "string" && staggerChildren) {
-      return children?.split(" ").map((word, index) => {
-        return (
-          <span
-            ref={animateRef}
-            key={word + "-" + index}
-            style={{ "--delay": index } as React.CSSProperties}
-            className={`
-      display-i-b text-on-background ${checkCustomClass()}`}
-          >
-            <Tag className={className}>{word}&nbsp;</Tag>
-          </span>
-        );
+      return children?.split(" ").map((word: string, index: number) => {
+        return tags(word, index, undefined);
       });
     } else if (typeof children == "string") {
-      return (
-        <span
-          ref={animateRef}
-          style={{ "--delay": delay } as React.CSSProperties}
-          className={`
-      display-i-b text-on-background ${checkCustomClass()}`}
-        >
-          <Tag className={className}>{children}&nbsp;</Tag>
-        </span>
-      );
+      return tags(children, undefined, delay);
     } else {
       return (
         <span
@@ -83,7 +76,7 @@ const AnimatedText: React.FC<IAnimatedText> = ({
 
   return (
     <div
-      className={`w-full align-center justify-start ${
+      className={`w-full align-center ${className} ${
         onLoadPage
           ? "show-animated-text"
           : isOnScreen

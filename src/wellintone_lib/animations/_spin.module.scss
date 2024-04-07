@@ -4,6 +4,8 @@
   -ms-animation: rotating calc(var(--speed) * 1s) linear infinite;
   -o-animation: rotating calc(var(--speed) * 1s) linear infinite;
   animation: rotating calc(var(--speed) * 1s) linear infinite;
+  display: block;
+  transform-origin: center;
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {

@@ -41,6 +41,7 @@
 @import "../components/Logo/logo.module";
 
 /* PAGES */
+@import "./home.module";
 @import "../app/\(routes\)/about/about.module";
 
 @import "../wellintone_lib/utilities.module";
@@ -49,4 +50,9 @@
   position: absolute;
   bottom: 0px;
   left: 0px;
+  filter: drop-shadow(1px 4px 10px rgba(0, 0, 0, 0.5));
+}
+
+.animated_cursor_child {
+  transform: translate(var(--x), var(--y));
 }

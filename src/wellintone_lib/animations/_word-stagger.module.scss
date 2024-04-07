@@ -1,8 +1,6 @@
 @mixin textBase() {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
-  text-align: start;
   overflow: hidden;
   transition: 0.8s ease-in-out;
   text-align: center;

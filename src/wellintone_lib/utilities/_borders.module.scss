@@ -34,23 +34,24 @@ $border-direction: border, border-top, border-bottom, border-right, border-left;
     @each $directionProperty in $border-direction {
       @each $key, $value in $colors {
         @if ($directionProperty == border-top) {
-          .bt-#{$typeProperty}-#{$widthProperty}-#{$key} {
+          /* bt-solid-1-red */
+          .bt-#{$widthProperty}-#{$typeProperty}-#{$key} {
             #{$directionProperty}: $widthValue $typeProperty $value;
           }
         } @else if ($directionProperty == border-bottom) {
-          .bm-#{$typeProperty}-#{$widthProperty}-#{$key} {
+          .bm-#{$widthProperty}-#{$typeProperty}-#{$key} {
             #{$directionProperty}: $widthValue $typeProperty $value;
           }
         } @else if ($directionProperty == border-right) {
-          .br-#{$typeProperty}-#{$widthProperty}-#{$key} {
+          .br-#{$widthProperty}-#{$typeProperty}-#{$key} {
             #{$directionProperty}: $widthValue $typeProperty $value;
           }
         } @else if ($directionProperty == border-left) {
-          .bl-#{$typeProperty}-#{$widthProperty}-#{$key} {
+          .bl-#{$widthProperty}-#{$typeProperty}-#{$key} {
             #{$directionProperty}: $widthValue $typeProperty $value;
           }
         } @else {
-          .b-#{$typeProperty}-#{$widthProperty}-#{$key} {
+          .b-#{$widthProperty}-#{$typeProperty}-#{$key} {
             #{$directionProperty}: $widthValue $typeProperty $value;
           }
         }
