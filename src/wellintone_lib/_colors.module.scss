@@ -10,6 +10,9 @@
   .bg-#{$key} {
     background-color: $val;
   }
+  .color-#{$key} {
+    color: $val;
+  }
 
   @if ($val != #000000 and $val != #ffffff) {
     @for $i from 1 through 9 {

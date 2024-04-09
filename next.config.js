@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  reactStrictMode: false,
   webpack(config, { dev }) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

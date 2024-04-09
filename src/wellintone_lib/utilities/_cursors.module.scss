@@ -1,0 +1,30 @@
+@use "sass:math";
+
+$cursors: (
+  "cursor": (
+    "prefix": "cursor",
+    "values": (
+      "h": help,
+      "w": wait,
+      "c": crosshair,
+      "n": not-allowed,
+      "zi": zoom-in,
+      "zo": zoom-out,
+      "g": grab,
+      "p": pointer,
+      "r": revert,
+      "pro": progress,
+    ),
+  ),
+);
+
+@each $property, $map in $cursors {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}-#{$k} {
+      #{$property}: $v;
+    }
+  }
+}

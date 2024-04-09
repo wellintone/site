@@ -1,0 +1,33 @@
+@use "sass:math";
+$values: (
+  "v": visible,
+  "s": scroll,
+  "h": hidden,
+  "auto": auto,
+);
+
+$overflows: (
+  "overflow": (
+    "prefix": "over",
+    "values": $values,
+  ),
+  "overflow-x": (
+    "prefix": "over-x",
+    "values": $values,
+  ),
+  "overflow-y": (
+    "prefix": "over-y",
+    "values": $values,
+  ),
+);
+
+@each $property, $map in $overflows {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}-#{$k} {
+      #{$property}: $v;
+    }
+  }
+}

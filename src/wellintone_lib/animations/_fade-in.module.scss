@@ -1,8 +1,5 @@
-$time: 0.5s;
-
-@mixin fade-base($opacity: 0, $transition: all $time ease-in) {
+@mixin fade-base($opacity: 0) {
   opacity: $opacity;
-  transition: $transition;
 }
 
 $fade-from: left, right, top, bottom, "base", "scaleDown", "scaleUp";

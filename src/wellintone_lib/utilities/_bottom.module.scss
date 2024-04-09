@@ -1,0 +1,17 @@
+@use "sass:math";
+
+.bottom-auto {
+  bottom: auto;
+}
+
+@for $i from 1 through 9000 {
+  .bottom\[#{$i}px\] {
+    bottom: calc(#{$i} * 1px);
+  }
+
+  @if ($i <= 100) {
+    .bottom\[#{$i}\%\] {
+      bottom: calc(#{$i}* 1%);
+    }
+  }
+}

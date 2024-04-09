@@ -36,19 +36,25 @@ $widths: (
 }
 
 @for $i from 1 through 9000 {
-  .h-max\[#{$i}px\] {
+  .w-max\[#{$i}px\] {
     max-width: calc(#{$i} * 1px);
   }
-  .h-min\[#{$i}px\] {
+  .w-min\[#{$i}px\] {
     min-width: calc(#{$i} * 1px);
   }
-  .h\[#{$i}px\] {
+  .w\[#{$i}px\] {
     width: calc(#{$i} * 1px);
   }
 
-  @if ($i <= 99) {
-    .h\[#{$i}\%\] {
-      width: calc(#{$i}* 1%);
+  @if ($i <= 100) {
+    .w-max\[#{$i}\%\] {
+      max-width: calc(#{$i}* 1%);
+    }
+    .w-min\[#{$i}\%\] {
+      min-width: calc(#{$i} * 1%);
+    }
+    .w\[#{$i}\%\] {
+      width: calc(#{$i} * 1%);
     }
   }
 }

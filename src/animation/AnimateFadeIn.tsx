@@ -26,33 +26,36 @@ const AnimateFadeIn = ({
   height = "100%",
   className,
   delay = 0,
-  fadeIn = "base",
+  fadeIn,
 }: IAnimateFadeIn) => {
   const animateFadeInRef = useRef(null);
-  const isOnScreen = useOnScreen(animateFadeInRef);
+  const [fadeInType, setFadeInType] = useState("fade-in-base");
+  const isOnScreen = useOnScreen(
+    animateFadeInRef,
+    document.getElementsByClassName("imageslidercontainer")[0],
+    animateFadeInRef?.current?.parentNode.id
+  );
 
-  const fadeInFrom = (
-    fadeIn:
-      | "top"
-      | "bottom"
-      | "left"
-      | "right"
-      | "base"
-      | "scaleUp"
-      | "scaleDown"
-  ) => {
-    return {
-      from: fadeIn ? "on-fade-in-" + fadeIn : "on-fade-in-base",
-      to: fadeIn ? "fade-in-" + fadeIn : "fade-in-base",
-    };
-  };
+  useEffect(() => {
+    if (fadeIn || animateFadeInRef?.current?.parentNode.id) {
+      if (isOnScreen) {
+        setFadeInType(() => "fade-in-" + fadeIn);
+
+        setTimeout(() => {
+          setFadeInType(() => "on-fade-in-" + fadeIn);
+        }, delay * 1000);
+      }
+    }
+  }, [fadeIn, animateFadeInRef?.current?.parentNode.id, isOnScreen]);
 
   return (
     <div
       ref={animateFadeInRef}
-      className={`justify-center align-center ${className || ""} ${
-        isOnScreen ? fadeInFrom(fadeIn).from : fadeInFrom(fadeIn).to
-      } `}
+      style={{ transition: `all ${delay}s ease-in` } as React.CSSProperties}
+      className={`animatedFadeIn justify-center align-center ${
+        className || ""
+      }  ${fadeInType}`}
+      /* ${isOnScreen ? fadeInType.from : fadeInType.to}  */
     >
       {children}
     </div>

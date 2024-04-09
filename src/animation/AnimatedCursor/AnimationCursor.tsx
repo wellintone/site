@@ -18,7 +18,7 @@ const AnimationCursor = ({ children, customClass }: IAnimationCursor) => {
   return (
     <div
       ref={animationCursorRef}
-      className={`animation-cursor-parent w-full h-full justify-center align-center b-1px-solid-red ${
+      className={`animation-cursor-parent w-full h-full justify-center align-center ${
         customClass || ""
       }`}
     >
