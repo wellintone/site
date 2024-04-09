@@ -5,7 +5,7 @@ import AnimatedText from "@/animation/AnimatedText";
 import FluidContainer from "@/components/molecolar/FluidContainer";
 import Link from "next/link";
 import Button from "@/components/button";
-import AnimateFadeIn from "@/animation/AnimateFadeIn";
+/* import AnimateFadeIn from "@/animation/AnimateFadeIn"; */
 import HireMe from "@/components/HireMe/HireMe";
 import AnimationCursor from "@/animation/AnimatedCursor/AnimationCursor";
 import AnimatedCursorChild from "@/animation/AnimatedCursor/AnimatedCursorChild";
@@ -16,13 +16,13 @@ const Home = () => {
       <AnimationCursor customClass="w-screen h-screen">
         <FluidContainer minWidth="22rem" className="pt-0">
           <AnimatedCursorChild as="div" shift={40}>
-            <AnimateFadeIn className="w-full" fadeIn="scaleDown">
+            {/*  <AnimateFadeIn className="w-full" fadeIn="scaleDown">
               <Image
                 src={ProfilePicture}
                 alt="Wellintone"
                 className="w-full h-auto image__home"
               />
-            </AnimateFadeIn>
+            </AnimateFadeIn> */}
           </AnimatedCursorChild>
 
           <div className="column gap-1">

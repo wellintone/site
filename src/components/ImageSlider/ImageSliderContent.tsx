@@ -17,7 +17,7 @@ const ImageSliderContent: React.FC<IImageSliderContent> = ({
     <div
       /* id={`${100 * +id}`} */
       className="img-slider-img "
-      style={{ translate: `${-100 * +id}%` }}
+      /* style={{ translate: `${-100 * +id}%` }} */
       id={id.toString()}
     >
       {console.log("ID", id)}

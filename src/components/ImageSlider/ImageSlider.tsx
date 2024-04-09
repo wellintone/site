@@ -57,7 +57,6 @@ export function ImageSlider({ children }: ImageSliderProps) {
           height: "100%",
           display: "flex",
           overflow: "hidden",
-          border: "1px solid red",
         }}
       >
         {children}
