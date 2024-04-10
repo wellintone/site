@@ -8,6 +8,29 @@ $on-background: #424242;
 $on-background-alt: #424242b3;
 $background: #e9e6e0;
 
+$clr-dark: 230 35% 7%;
+$clr-light: 231 77% 90%;
+$clr-white: 0 0% 100%;
+
+.bg-dark {
+  background-color: hsl($clr-dark);
+}
+.bg-accent {
+  background-color: hsl($clr-light);
+}
+.bg-white {
+  background-color: hsl($clr-white);
+}
+.txt-dark {
+  color: hsl($clr-dark);
+}
+.txt-accent {
+  color: hsl($clr-light);
+}
+.txt-white {
+  color: hsl($clr-white);
+}
+
 $box-shadow: 0 5px 20px 1px #00000080;
 $box-shadow-thin: 0 5px 10px 1px #00000080;
 
@@ -16,68 +39,6 @@ $info: #f6c31c !default;
 $confirmed: #26bb26 !default;
 
 /* THEME */
-
-$themes: (
-  light: (
-    primary: rgb(255, 92, 92),
-    primary-variant: #ff2d2d,
-    secondary: #1b9999,
-    on-primary: rgb(250, 250, 250),
-    on-background: #424242,
-    on-background-alt: #424242b3,
-    background: rgb(255, 255, 255),
-    box-shadow: 0 5px 20px 1px rgba(0, 0, 0, 0.5),
-  ),
-  dark: (
-    primary: rgb(150, 65, 255),
-    primary-variant: #6c63ff,
-    secondary: #03dac5,
-    on-primary: #000,
-    on-background: rgba(255, 255, 255, 0.9),
-    on-background-alt: rgba(255, 255, 255, 0.7),
-    background: #121212,
-  ),
-);
-
-$color-schemes: (
-  scheme-default: (
-    backgroundColor: #00b4ff,
-  ),
-  scheme-cs1: (
-    backgroundColor: #e68a00,
-  ),
-);
-
-@mixin customize($arg: theme) {
-  $array: $themes;
-  $prefix: theme;
-
-  @if ($arg == theme) {
-    $array: $themes;
-    $prefix: theme;
-  } @else {
-    $array: $color-schemes;
-    $prefix: color;
-  }
-
-  @each $theme, $map in $array {
-    .#{$prefix}-#{$theme} & {
-      $array-map: () !global;
-      @each $key, $submap in $map {
-        $value: map-get(map-get($array, $theme), "#{$key}");
-        $array-map: map-merge(
-          $array-map,
-          (
-            $key: $value,
-          )
-        ) !global;
-      }
-
-      @content;
-      $array-map: null !global;
-    }
-  }
-}
 
 @function getValue($key) {
   @return map-get($array-map, $key);
@@ -97,6 +58,7 @@ $colors: (
   "info": $info,
   "confirmed": $confirmed,
   "red": #ff0000,
+  "white": #ffffff,
 );
 
 // spacing

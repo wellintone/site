@@ -18,100 +18,49 @@
   scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3,
+h4,
+h4,
+h6,
+p {
+  font-weight: 400;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
   font-family: var(--font-roboto);
-  overflow-x: hidden;
   min-height: 100vh;
-  position: relative;
-
-  @include customize(theme) {
-    background-color: getValue(background);
-    color: getValue(on-background);
-  }
+  line-height: 1.5;
+  background-color: hsl($clr-white);
+  color: hsl($clr-dark);
+  font-size: $font-base;
 }
 
-ul {
-  padding: 0;
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  color: $on-background;
-}
-
-hr {
-  border: 0;
-  border-top: 1px dotted #efefef;
-}
-
-/* img {
+/* make images easier to work with */
+img,
+picture {
   max-width: 100%;
-} */
-
-button {
-  border: 0;
+  display: block;
 }
 
-.border-solid {
-  border-style: solid;
-}
-.border-dashed {
-  border-style: dashed;
-}
-.border-dotted {
-  border-style: dotted;
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-.error {
-  color: $error;
-  border-color: $error;
-  border-style: solid;
-  margin: $base-margin;
-  padding: $base-padding;
-  border-radius: $base-border-radius;
-  border-width: $base-border-thickness;
-}
-.notification {
-  color: $secondary;
-  border-color: $secondary;
-  border-style: solid;
-  margin: $base-margin;
-  padding: $base-padding;
-  border-radius: $base-border-radius;
-  border-width: $base-border-thickness;
-}
+/* remove animations for people who've turned them off */
 
-.icon__default {
-  height: 1.5em;
-  width: 100%;
-}
-
-.bgImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-}
-
-.bgImageContainer {
-  width: 100%;
-  height: 100% !important;
-  position: absolute;
-}
-
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-image: linear-gradient(
-    to bottom,
-    rgb(17, 17, 17),
-    rgba(93, 0, 0, 0.206)
-  );
-  z-index: 2;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

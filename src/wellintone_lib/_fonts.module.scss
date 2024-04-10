@@ -22,43 +22,25 @@ $current: 10vw;
 h1 {
   font-family: var(--font-playfair_display);
   font-size: clamp($minH1, $current, $maxH1);
-  @include customize(theme) {
-    color: getValue(on-background);
-  }
 }
 h2 {
   color: $on-background-alt;
   margin: 0;
   font-size: clamp($minH2, $current, $maxH2);
-  @include customize(theme) {
-    color: getValue(on-background);
-  }
 }
 h3 {
   margin: 0;
   font-size: clamp($minH3, $current, $maxH3);
-  @include customize(theme) {
-    color: getValue(on-background);
-  }
 }
 h4 {
   margin: 0;
   font-size: clamp($minH4, $current, $maxH4);
-  @include customize(theme) {
-    color: getValue(on-background);
-  }
 }
 h5 {
   margin: 0;
   font-size: clamp($minH5, $current, $maxH5);
-  @include customize(theme) {
-    color: getValue(on-background);
-  }
 }
 p {
   margin: 0;
   font-size: clamp($minParagraph, 2vw, $maxParagraph);
-  @include customize(theme) {
-    color: getValue(on-background-alt);
-  }
 }

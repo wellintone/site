@@ -45,6 +45,15 @@ $heights: (
   .h\[#{$i}px\] {
     height: calc(#{$i} * 1px);
   }
+  .h-max\[#{$i}em\] {
+    max-height: calc(#{$i} * 1em);
+  }
+  .h-min\[#{$i}em\] {
+    min-height: calc(#{$i} * 1em);
+  }
+  .h\[#{$i}em\] {
+    height: calc(#{$i} * 1em);
+  }
 
   @if ($i <= 100) {
     .h-max\[#{$i}\%\] {

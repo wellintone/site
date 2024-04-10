@@ -4,7 +4,7 @@ const Twitter = ({ className, ...rest }: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 256 209"
-    className={`${className} icon__default`}
+    className={`${className} h[2em] w[100%]`}
     {...rest}
   >
     <path fill="rgba(255, 255, 255, 0)" d="M0 0h256v209H0z" />
