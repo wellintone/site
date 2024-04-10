@@ -2,8 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
 import { SidebarLink } from "../types";
-import sidebar from "./sidebar";
-import { sidebarLinks } from "../constants/sidebar";
 
 interface IMenutItems {
   index: number;

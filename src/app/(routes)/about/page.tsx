@@ -24,39 +24,36 @@ const IMAGES = [
 
 const About = () => {
   return (
-    <main className="w-full h-min-screen column align-center justify-center">
-      <AnimationCursor>
-        <FluidContainer>
-          <AnimatedCursorChild shift={50} as="h1">
-            <AnimatedText
-              staggerChildren={true}
-              className="justify-center"
-              as="h1"
-            >
-              Passion Fuels Purpose!
-            </AnimatedText>
-          </AnimatedCursorChild>
-        </FluidContainer>
-      </AnimationCursor>
+    <main className="w-full h-min-screen column align-start justify-start">
+      <FluidContainer className="">
+        <AnimatedText
+          staggerChildren={true}
+          className="justify-center font-xl"
+          as="h1"
+        >
+          Passion Fuels Purpose!
+        </AnimatedText>
 
-      <Animation>
-        <AnimationImageSlider>
-          {IMAGES.map(({ url, alt }, index) => (
-            <Test
-              style={{
-                maxWidth: "1200px",
-                width: "100%",
-                aspectRatio: "10 / 6",
-                margin: "0 auto",
-              }}
-              key={index}
-              index={index}
-              url={url}
-              alt={alt}
-            />
-          ))}
-        </AnimationImageSlider>
-      </Animation>
+        {/* TODO: EXAMPLE */}
+        {/*  <Animation>
+          <AnimationImageSlider>
+            {IMAGES.map(({ url, alt }, index) => (
+              <Test
+                style={{
+                  maxWidth: "1200px",
+                  width: "100%",
+                  aspectRatio: "10 / 6",
+                  margin: "0 auto",
+                }}
+                key={index}
+                index={index}
+                url={url}
+                alt={alt}
+              />
+            ))}
+          </AnimationImageSlider>
+        </Animation> */}
+      </FluidContainer>
     </main>
   );
 };

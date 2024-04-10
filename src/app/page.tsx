@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import ProfilePicture from "../../public/img/developer-pic-1.png";
@@ -10,6 +11,7 @@ import HireMe from "@/components/HireMe/HireMe";
 import AnimationCursor from "@/animation/AnimatedCursor/AnimationCursor";
 import AnimatedCursorChild from "@/animation/AnimatedCursor/AnimatedCursorChild";
 import { Animation } from "@/context/AnimationContext";
+import { AnimationChangePage } from "@/animation/AnimationChangePage/AnimationChangePage";
 
 const Home = () => {
   return (

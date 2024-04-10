@@ -1,0 +1,149 @@
+@use "sass:math";
+
+/* COLS */
+.grid-cols-none {
+  grid-template-columns: none;
+}
+.grid-cols-subgrid {
+  grid-template-columns: subgrid;
+}
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+
+/* SPAN */
+.col-span-auto {
+  grid-column: auto;
+}
+.col-span-full {
+  grid-column: 1 / -1;
+}
+@for $i from 1 through 12 {
+  .col-span-#{$i} {
+    grid-column: span #{i} / span #{i};
+  }
+  .col-start-#{$i} {
+    grid-column: span #{i} / span #{i};
+  }
+}
+
+/* START */
+.col-start-auto {
+  grid-column-start: auto;
+}
+
+@for $i from 1 through 13 {
+  .col-start-#{$i} {
+    grid-column-start: #{i};
+  }
+}
+
+/* END */
+.col-end-auto {
+  grid-column-end: auto;
+}
+
+@for $i from 1 through 13 {
+  .col-end-#{$i} {
+    grid-column-end: #{i};
+  }
+}
+
+/* ROW */
+.grid-rows-none {
+  grid-template-rows: none;
+}
+.grid-rows-subgrid {
+  grid-template-rows: subgrid;
+}
+
+@for $i from 1 through 12 {
+  .grid-rows-#{$i} {
+    grid-template-rows: repeat(#{$i}, minmax(0, 1fr));
+  }
+}
+/* SPAN */
+.row-span-auto {
+  grid-row: auto;
+}
+.row-span-full {
+  grid-row: 1 / -1;
+}
+@for $i from 1 through 12 {
+  .row-span-#{$i} {
+    grid-row: span #{i} / span #{i};
+  }
+  .row-start-#{$i} {
+    grid-row: span #{i} / span #{i};
+  }
+}
+
+/* START */
+.row-start-auto {
+  grid-row-start: auto;
+}
+
+@for $i from 1 through 13 {
+  .row-start-#{$i} {
+    grid-row-start: #{i};
+  }
+}
+
+/* END */
+.row-end-auto {
+  grid-row-end: auto;
+}
+
+@for $i from 1 through 13 {
+  .row-end-#{$i} {
+    grid-row-end: #{i};
+  }
+}
+
+/* AUTO FLOW */
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+.grid-flow-dense {
+  grid-auto-flow: dense;
+}
+.grid-flow-row-dense {
+  grid-auto-flow: row dense;
+}
+.grid-flow-col-dense {
+  grid-auto-flow: column dense;
+}
+
+/* AUTO COLUMN */
+.auto-cols-auto {
+  grid-auto-columns: auto;
+}
+.auto-cols-min {
+  grid-auto-columns: min-content;
+}
+.auto-cols-auto {
+  grid-auto-columns: max-content;
+}
+.auto-cols-auto {
+  grid-auto-columns: minmax(0, 1fr);
+}
+
+/* AUTO ROW */
+.auto-rows-auto {
+  grid-auto-rows: auto;
+}
+.auto-rows-min {
+  grid-auto-rows: min-content;
+}
+.auto-rows-auto {
+  grid-auto-rows: max-content;
+}
+.auto-rows-auto {
+  grid-auto-rows: minmax(0, 1fr);
+}

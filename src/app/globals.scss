@@ -60,3 +60,81 @@
 .animated_cursor_child {
   transform: translate(var(--x), var(--y));
 }
+
+.transitionPageTest {
+  transform: translateY(-100vh);
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  transition: all 1.4s ease-in-out;
+
+  &:before {
+    content: "";
+    transform: translateY(-100vh);
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: $primary;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 997;
+    transition: all 1.2s ease-in-out;
+  }
+  &:after {
+    content: "";
+    transform: translateY(-100vh);
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: $on-background;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    transition: all 1s ease-in-out;
+  }
+}
+
+.animateTransitionPageTest {
+  transform: translateY(0vw);
+  opacity: 1;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 996;
+  transition: all 1s ease-in-out;
+  &:before {
+    content: "";
+    transform: translateY(0vw);
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: $primary;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 997;
+    transition: all 1.1s ease-in-out;
+  }
+  &:after {
+    content: "";
+    transform: translateY(0vw);
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: $on-background;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    transition: all 1.4s ease-in-out;
+  }
+}

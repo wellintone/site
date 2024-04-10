@@ -4,8 +4,6 @@ import Hamburger from "./Hamburger";
 import { useRef, useState } from "react";
 import { Links } from "@/utils/routes";
 import NavbarLinkList from "./NavbarLinkList";
-import logo from "../../../../public/img/logo.png";
-import Switch from "../Switch/Switch";
 import LogoWellintone from "../Logo/LogoWellintone";
 import Dribble from "../Svgs/Dribble";
 import Twitter from "../Svgs/Twitter";
