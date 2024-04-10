@@ -1,4 +1,5 @@
 "use client";
+import { throttle } from "@/utils/functions";
 import React, {
   ElementType,
   HTMLAttributes,
@@ -33,12 +34,15 @@ const AnimatedCursorChild: React.FC<IAnimatedCursorChild> = ({
     );
 
     if (findParent.length) {
-      findParent[0].addEventListener("mousemove", (e: any) => {
-        let rect = e.currentTarget.getBoundingClientRect();
-        let x = e.clientX - rect.left;
-        let y = e.clientY - rect.top;
-        setAxis({ x, y });
-      });
+      findParent[0].addEventListener(
+        "mousemove",
+        throttle((e: any) => {
+          let rect = e.currentTarget.getBoundingClientRect();
+          let x = e.clientX - rect.left;
+          let y = e.clientY - rect.top;
+          setAxis({ x, y });
+        }, 40)
+      );
     }
   }, [shift]);
   return (

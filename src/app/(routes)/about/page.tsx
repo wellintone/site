@@ -12,7 +12,7 @@ import fourth from "../../../../public/img/developer-pic-1.png";
 import fifth from "../../../../public/img/right.jpg";
 import { Animation } from "@/context/AnimationContext";
 import Test from "./test";
-import AnimationImageSlider from "./AnimationImageSlider";
+import AnimationImageSlider from "../../../animation/AnimationSlider/AnimationImageSlider";
 
 const IMAGES = [
   { url: first, alt: "Car One" },

@@ -1,14 +1,6 @@
 "use client";
 import { useAnimation } from "@/context/AnimationContext";
-import { useOnScreen } from "@/hooks/useOnScreen";
-import { transform } from "next/dist/build/swc";
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 export type IAnimateFadeIn = {
   children: React.ReactNode | React.ReactNode[];
   zIndex?: number;
@@ -39,21 +31,11 @@ const AnimateFadeIn = ({
   shiftMount = 0,
 }: IAnimateFadeIn) => {
   const animateFadeInRef = useRef(null);
-  const [fadeInType, setFadeInType] = useState({ from: "", to: "" });
-  const { count } = useAnimation();
+  const { count, direction } = useAnimation();
 
   const [shi, setShift] = useState(shiftMount);
   const [myDelay, setMyDelay] = useState(delay);
   const [opacity, setOpacity] = useState(1);
-
-  useEffect(() => {
-    if (fadeIn) {
-      setFadeInType({
-        from: "on-fade-in-" + fadeIn,
-        to: "fade-in-" + fadeIn,
-      });
-    }
-  }, [fadeIn]);
 
   useEffect(() => {
     setShift(shiftMount);
@@ -67,6 +49,20 @@ const AnimateFadeIn = ({
     }, delay * 100);
   }, [count]);
 
+  const fadeDirection = useMemo(() => {
+    let fade = undefined;
+    fadeIn === "left"
+      ? (fade = `translateX(${-shi}px)`)
+      : fadeIn === "right"
+      ? (fade = `translateX(${shi}px)`)
+      : direction === "left"
+      ? (fade = `translateX(${-shi}px)`)
+      : direction === "right"
+      ? (fade = `translateX(${shi}px)`)
+      : undefined;
+    return fade;
+  }, [fadeIn, direction, shi]);
+
   return (
     <div
       ref={animateFadeInRef}
@@ -75,7 +71,7 @@ const AnimateFadeIn = ({
           opacity: opacity,
           transition: `all ${myDelay}s ease-in`,
           zIndex: zIndex,
-          transform: `translateX(${fadeIn === "left" ? -shi : shi}px)`,
+          transform: fadeDirection,
         } as React.CSSProperties
       }
       className={`animatedFadeIn justify-center align-center ${

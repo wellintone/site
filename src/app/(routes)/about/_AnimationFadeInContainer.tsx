@@ -1,18 +1,10 @@
 "use client";
 
 import { useAnimation } from "@/context/AnimationContext";
-import { count } from "console";
 import React, { forwardRef, useCallback, useEffect } from "react";
 
 const AnimationContainer = forwardRef(({ children }: any) => {
-  const {
-    animation,
-    animationRef,
-    direction,
-    triggerAnimation,
-    count,
-    setAnimation,
-  } = useAnimation();
+  const { animationRef, direction, count } = useAnimation();
 
   const triggerAnimationF = useCallback(() => {
     const element = animationRef.current;

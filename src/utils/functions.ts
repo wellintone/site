@@ -7,3 +7,55 @@ export function findWord(phrases: string, wordToFind: string) {
   }
   return null;
 }
+
+export function debounce(cb: any, delay: number = 1000) {
+  let timeout: ReturnType<typeof setTimeout>;
+  return (...args: any) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      cb(...args);
+    }, delay);
+  };
+}
+
+export const throttle = (fn: any, delay: number) => {
+  let lastTime = 0;
+  let id = 0;
+  console.log("CALLED subito");
+
+  return (...args: any) => {
+    const now = new Date().getTime();
+    id++;
+    if (now - lastTime < delay) return;
+    lastTime = now;
+    fn(...args);
+  };
+};
+
+/* export function throttle(cb: any, delay: number = 1000) {
+  let shouldWait: boolean = false;
+  let waitingArgs: any;
+
+  const timeOutFunc = () => {
+    if (waitingArgs == null) {
+      shouldWait = false;
+    } else {
+      cb(...waitingArgs);
+      waitingArgs = null;
+      setTimeout(timeOutFunc, delay);
+    }
+  };
+
+  return (...args: any) => {
+    if (shouldWait) {
+      waitingArgs = args;
+      return;
+    }
+
+    cb(...args);
+    shouldWait = true;
+
+    setTimeout(timeOutFunc, delay);
+  };
+}
+ */

@@ -14,7 +14,6 @@ const Test = ({ style, index, alt, url }: any) => {
         <AnimateFadeIn
           shiftMount={200}
           zIndex={99}
-          fadeIn={"right"}
           delay={0.6}
           className=" text-red font-lg"
         >
@@ -23,28 +22,22 @@ const Test = ({ style, index, alt, url }: any) => {
         <AnimateFadeIn
           shiftMount={200}
           zIndex={99}
-          fadeIn={"right"}
           delay={0.9}
           className="text-red font-lg"
         >
           IMAGES22222
         </AnimateFadeIn>
       </div>
-      <AnimateSliderIn
-        delay={0}
-        className="h[100%] w[100%] text-red font-lg ps-a"
-        zIndex={-1}
-        sliderIn={"right"}
-      >
-        <Image
-          height={300}
-          key={url}
-          src={url}
-          alt={alt}
-          /* aria-hidden={index !== count} */
-          className="img-slider-img "
-        />
-      </AnimateSliderIn>
+
+      <Image
+        height={300}
+        key={url}
+        src={url}
+        alt={alt}
+        style={{ zIndex: -1 }}
+        /* aria-hidden={index !== count} */
+        className="img-slider-img ps-a"
+      />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 "use client";
+import { throttle } from "@/utils/functions";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 export type IParallax = {
   children: React.ReactNode;
@@ -54,7 +55,7 @@ const Parallax = ({
   }, [isScrolledIntoView]);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", throttle(handleScroll, 50));
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
