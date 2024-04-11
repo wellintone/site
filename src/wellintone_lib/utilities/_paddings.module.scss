@@ -46,20 +46,20 @@ $padding-width: (
 
   @each $k, $v in $values {
     @if ($property == "padding-y") {
-      .py-#{$k} {
+      .px-#{$k} {
         padding-left: $v;
         padding-right: $v;
       }
-      .-py-#{$k} {
+      .-px-#{$k} {
         padding-left: $v;
         padding-right: $v;
       }
     } @else if($property == "padding-x") {
-      .px-#{$k} {
+      .py-#{$k} {
         padding-top: $v;
         padding-bottom: $v;
       }
-      .-px-#{$k} {
+      .-py-#{$k} {
         padding-top: $v;
         padding-bottom: $v;
       }

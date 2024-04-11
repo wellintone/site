@@ -7,6 +7,7 @@ $values: (
   "3": $base-padding * 4,
   "4": $base-padding * 6,
   "5": $base-padding * 8,
+  "6": $base-padding * 10,
 );
 
 $margin-width: (
@@ -46,20 +47,20 @@ $margin-width: (
 
   @each $k, $v in $values {
     @if ($property == "margin-y") {
-      .my-#{$k} {
+      .mx-#{$k} {
         margin-left: $v;
         margin-right: $v;
       }
-      .-my-#{$k} {
+      .-mx-#{$k} {
         margin-left: -$v;
         margin-right: -$v;
       }
     } @else if($property == "margin-x") {
-      .mx-#{$k} {
+      .my-#{$k} {
         margin-top: $v;
         margin-bottom: $v;
       }
-      .-mx-#{$k} {
+      .-my-#{$k} {
         margin-top: -$v;
         margin-bottom: -$v;
       }

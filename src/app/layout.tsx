@@ -32,12 +32,10 @@ export default function RootLayout({
       <body
         className={`${roboto_init.variable} ${playfair_display_init.variable} theme-light`}
       >
-        <ThemeProvider>
-          <AnimationChangePage />
-          <Navbar linkColor="white" textBold={800} />
-          {children}
-          <Footer></Footer>
-        </ThemeProvider>
+        <AnimationChangePage />
+        <Navbar linkColor="white" textBold={800} />
+        {children}
+        <Footer></Footer>
       </body>
     </html>
   );

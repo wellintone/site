@@ -1,18 +1,13 @@
 "use client";
 
-import AnimatedText from "@/animation/AnimatedText";
-import AnimationCursor from "@/animation/AnimatedCursor/AnimationCursor";
-import FluidContainer from "@/components/molecolar/FluidContainer";
 import React from "react";
-import AnimatedCursorChild from "@/animation/AnimatedCursor/AnimatedCursorChild";
+import profilePic from "../../../../public/img/developer-pic-2.jpg";
 import first from "../../../../public/img/bachelor.jpg";
 import second from "../../../../public/img/hair1.jpg";
 import third from "../../../../public/img/developer-pic-2.jpg";
 import fourth from "../../../../public/img/developer-pic-1.png";
 import fifth from "../../../../public/img/right.jpg";
-import { Animation } from "@/context/AnimationContext";
-import Test from "./test";
-import AnimationImageSlider from "../../../animation/AnimationSlider/AnimationImageSlider";
+import Image from "next/image";
 
 const IMAGES = [
   { url: first, alt: "Car One" },
@@ -24,36 +19,43 @@ const IMAGES = [
 
 const About = () => {
   return (
-    <main className="w-full h-min-screen column align-start justify-start">
-      <FluidContainer className="">
-        <AnimatedText
-          staggerChildren={true}
-          className="justify-center font-xl"
-          as="h1"
-        >
-          Passion Fuels Purpose!
-        </AnimatedText>
+    <main className="w-full h-min-screen column align-start justify-start p-4">
+      <h1 className="justify-center font-xl text-on-background w-full">
+        Passion Fuels Purpose!
+      </h1>
+      <div className="grid w-full grid-cols-8 g-16 mt-4">
+        <div className="col-span-3  align-start justify-start column">
+          <h2 className="mb-3 mt-2 text-lg font-900 uppercase text-on-background">
+            Biography
+          </h2>
 
-        {/* TODO: EXAMPLE */}
-        {/*  <Animation>
-          <AnimationImageSlider>
-            {IMAGES.map(({ url, alt }, index) => (
-              <Test
-                style={{
-                  maxWidth: "1200px",
-                  width: "100%",
-                  aspectRatio: "10 / 6",
-                  margin: "0 auto",
-                }}
-                key={index}
-                index={index}
-                url={url}
-                alt={alt}
-              />
-            ))}
-          </AnimationImageSlider>
-        </Animation> */}
-      </FluidContainer>
+          <p className="text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis,
+            maxime voluptates vero consequuntur alias ratione enim ullam quo.
+            Non distinctio dolorum minus numquam architecto, alias id placeat?
+            Nulla, eveniet!
+          </p>
+          <p className="my-2 text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis,
+            maxime voluptates vero consequuntur alias ratione enim ullam quo.
+            Non distinctio dolorum minus numquam architecto, alias id placeat?
+            Nulla, eveniet!
+          </p>
+          <p className="text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis,
+            maxime voluptates vero consequuntur alias ratione enim ullam quo.
+            Non distinctio dolorum minus numquam architecto, alias id placeat?
+            Nulla, eveniet!
+          </p>
+        </div>
+        <div className="col-span-3 ps-r h-max b-radius-25 b-2-solid-on-background p-4 shadowImage">
+          <Image
+            src={profilePic}
+            alt="Codebucks"
+            className="w-full h-auto b-radius-xs "
+          />
+        </div>
+      </div>
     </main>
   );
 };

@@ -66,7 +66,7 @@ display-i-b text-on-background ${checkCustomClass()}`}
         <span
           ref={animateRef}
           style={{ "--delay": delay } as React.CSSProperties}
-          className={`display-i-b text-on-background ${className} ${checkCustomClass()}`}
+          className={`display-i-b py-2  text-on-background  ${checkCustomClass()}`}
         >
           {children}
         </span>

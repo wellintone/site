@@ -5,13 +5,13 @@ import ProfilePicture from "../../public/img/developer-pic-1.png";
 import AnimatedText from "@/animation/AnimatedText";
 import FluidContainer from "@/components/molecolar/FluidContainer";
 import Link from "next/link";
-import Button from "@/components/button";
+import Button from "@/components/Buttons/button";
 import AnimateFadeIn from "@/animation/AnimateFadeIn";
 import HireMe from "@/components/HireMe/HireMe";
 import AnimationCursor from "@/animation/AnimatedCursor/AnimationCursor";
 import AnimatedCursorChild from "@/animation/AnimatedCursor/AnimatedCursorChild";
 import { Animation } from "@/context/AnimationContext";
-import { AnimationChangePage } from "@/animation/AnimationChangePage/AnimationChangePage";
+import { BUTTON_SIZES, BUTTON_VARIANTS } from "@/components/Buttons/enums";
 
 const Home = () => {
   return (
@@ -60,13 +60,21 @@ const Home = () => {
                 delay={10}
                 bouncingY={true}
               >
-                <Button type="btn-primary" className="font-w-900 font-xs">
-                  <Link href={"/dummy.pdf"} target={"_blank"} download={true}>
+                <Link href={"/dummy.pdf"} target={"_blank"} download={true}>
+                  <Button
+                    size={BUTTON_SIZES.Large}
+                    variant={BUTTON_VARIANTS.Primary}
+                  >
                     Resume
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
                 <Link href="mailto:abcd@gmail.com" className="ml-2">
-                  Contact
+                  <Button
+                    size={BUTTON_SIZES.Large}
+                    variant={BUTTON_VARIANTS.Error}
+                  >
+                    Contact
+                  </Button>
                 </Link>
               </AnimatedText>
             </div>

@@ -28,7 +28,7 @@
 @import "../wellintone_lib/components/Navbar/navbar-additional.module";
 
 @import "../wellintone_lib/components/card.module";
-@import "../wellintone_lib/components/button.module";
+/* @import "../wellintone_lib/components/button.module"; */
 @import "../wellintone_lib/components/badge.module";
 @import "../wellintone_lib/components/menu-items.module";
 
@@ -44,6 +44,9 @@
 
 /* LOGO WELLINTONE */
 @import "../components/Logo/logo.module";
+
+/* BUTTON */
+@import "../components/Buttons/button.module";
 
 /* PAGES */
 @import "./home.module";
