@@ -65,80 +65,106 @@
   transform: translate(var(--x), var(--y));
 }
 
-.transitionPageTest {
-  transform: translateY(-100vh);
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 999;
-  transition: all 1.4s ease-in-out;
-
-  &:before {
-    content: "";
-    transform: translateY(-100vh);
-    opacity: 1;
-    height: 100vh;
-    width: 100vw;
-    background-color: $primary;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 997;
-    transition: all 1.2s ease-in-out;
-  }
-  &:after {
-    content: "";
-    transform: translateY(-100vh);
-    opacity: 1;
-    height: 100vh;
-    width: 100vw;
-    background-color: $on-background;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 998;
-    transition: all 1s ease-in-out;
-  }
+#transP {
+  height: 100%;
 }
-
-.animateTransitionPageTest {
-  transform: translateY(0vw);
-  opacity: 1;
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 996;
-  transition: all 1s ease-in-out;
-  &:before {
-    content: "";
-    transform: translateY(0vw);
-    opacity: 1;
-    height: 100vh;
+.transitionPageTest {
+  &__1 {
+    transform: translateX(-100vw);
+    height: 100%;
     width: 100vw;
-    background-color: $primary;
+    background-color: white;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 997;
-    transition: all 1.1s ease-in-out;
+    transition: all 1.4s ease-in-out;
   }
-  &:after {
-    content: "";
-    transform: translateY(0vw);
-    opacity: 1;
-    height: 100vh;
+  &__2 {
+    transform: translateX(-150vw);
+    height: 100%;
     width: 100vw;
-    background-color: $on-background;
+    background-color: $primary;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 998;
     transition: all 1.4s ease-in-out;
+  }
+  &__3 {
+    overflow: hidden;
+    transform: translateX(-200vw);
+    height: 100%;
+    width: 100vw;
+    background-color: $on-background;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    transition: all 1.4s ease-in-out;
+
+    .route {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      font-size: 100px;
+      color: $primary;
+      padding-top: 50vh;
+    }
+  }
+}
+
+.animateTransitionPageTest {
+  &__1 {
+    transform: translateX(0vw);
+    opacity: 1;
+    height: 100%;
+    width: 100vw;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 997;
+    transition: all 1.4s ease-in-out;
+  }
+
+  &__2 {
+    transform: translateX(0vw);
+    opacity: 1;
+    height: 100%;
+    width: 100vw;
+    background-color: $primary;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    transition: all 1.4s ease-in-out;
+  }
+
+  &__3 {
+    overflow: hidden;
+    transform: translateX(0vw);
+    opacity: 1;
+    height: 100%;
+    width: 100vw;
+    background-color: $on-background;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    transition: all 1.4s ease-in-out;
+
+    .route {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      font-size: 100px;
+      color: $primary;
+      padding-top: 50vh;
+    }
   }
 }

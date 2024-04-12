@@ -1,8 +1,4 @@
-"use client";
-import { AnimationChangePage } from "@/animation/AnimationChangePage/AnimationChangePage";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
 
 interface ICustomNavLink {
   route: string;
@@ -12,19 +8,35 @@ interface ICustomNavLink {
 const NavbarLink = ({ route, children }: ICustomNavLink) => {
   const currentPath = usePathname();
   const router = useRouter();
-  const [trans, setTransition] = useState(false);
 
   const waitToChange = () => {
-    const el = document.getElementById("transP");
-    el?.classList.remove("transitionPageTest");
-    el?.classList.add("animateTransitionPageTest");
-    setTransition(true);
-    setTimeout(() => {
-      el?.classList.add("transitionPageTest");
-      el?.classList.remove("animateTransitionPageTest");
-      router.push(route);
-      setTransition(false);
-    }, 1000);
+    const el = document.getElementById("transP")?.children;
+    if (el) {
+      for (let i = 0; i < el?.length; i++) {
+        el[i]?.classList.remove(`transitionPageTest__${i + 1}`);
+        el[i]?.classList.add(`animateTransitionPageTest__${i + 1}`);
+
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("route");
+        newDiv.innerHTML =
+          route === "/"
+            ? "home".toUpperCase()
+            : route.substring(1).toUpperCase();
+
+        el[2].appendChild(newDiv);
+
+        setTimeout(() => {
+          el[i]?.classList.add(`transitionPageTest__${i + 1}`);
+          el[i]?.classList.remove(`animateTransitionPageTest__${i + 1}`);
+
+          router.push(route);
+        }, 1400);
+
+        setTimeout(() => {
+          document?.getElementsByClassName("route")[0]?.remove();
+        }, 2800);
+      }
+    }
   };
   return (
     <div className="navbarLink">

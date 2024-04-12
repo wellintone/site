@@ -10,7 +10,14 @@ const HireMe = () => {
     <div className="hire_container align-center justify-center">
       <AnimatedCursorChild as="div" shift={-40}>
         <Spin>
-          <Image src={RotateImage} height={300} width={300} alt="rotate" />
+          <Image
+            src={RotateImage}
+            height={300}
+            width={300}
+            alt="rotate"
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+          />
         </Spin>
         <Link
           href="/"

@@ -8,6 +8,8 @@ import third from "../../../../public/img/developer-pic-2.jpg";
 import fourth from "../../../../public/img/developer-pic-1.png";
 import fifth from "../../../../public/img/right.jpg";
 import Image from "next/image";
+import { Skills } from "./Skills";
+import IncreaseNumber from "@/animation/IncreaseNumber";
 
 const IMAGES = [
   { url: first, alt: "Car One" },
@@ -53,9 +55,49 @@ const About = () => {
             src={profilePic}
             alt="Codebucks"
             className="w-full h-auto b-radius-xs "
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           />
         </div>
+
+        <div className="col-span-2 flex column align-end justify-between">
+          <div className="column align-end justify-center">
+            <span className="display-i-b txt-7xl font-w-900">
+              <IncreaseNumber
+                className="txt-7xl"
+                num={50}
+                time={50}
+                symbol="+"
+              />
+            </span>
+            <h2 className="txt-2xl">Satisfied Clients</h2>
+          </div>
+          <div className="my-4 column align-end justify-center">
+            <span className="display-i-b txt-7xl font-w-900">
+              <IncreaseNumber
+                className="txt-7xl"
+                num={40}
+                time={50}
+                symbol="+"
+              />
+            </span>
+            <h2 className="txt-2xl">Projects Completed</h2>
+          </div>
+          <div className="column align-end justify-center">
+            <span className="display-i-b txt-7xl font-w-900">
+              <IncreaseNumber
+                className="txt-7xl"
+                num={6}
+                time={200}
+                symbol="+"
+              />
+            </span>
+            <h2 className="txt-2xl">Years of experiences</h2>
+          </div>
+        </div>
       </div>
+
+      <Skills />
     </main>
   );
 };

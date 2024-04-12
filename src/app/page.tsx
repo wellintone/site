@@ -29,6 +29,8 @@ const Home = () => {
                   src={ProfilePicture}
                   alt="Wellintone"
                   className="w-full h-auto image__home"
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 />
               </AnimateFadeIn>
             </AnimatedCursorChild>
