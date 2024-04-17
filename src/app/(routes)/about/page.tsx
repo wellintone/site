@@ -10,6 +10,7 @@ import fifth from "../../../../public/img/right.jpg";
 import Image from "next/image";
 import { Skills } from "./Skills";
 import IncreaseNumber from "@/animation/IncreaseNumber";
+import Experiences from "./Experiences";
 
 const IMAGES = [
   { url: first, alt: "Car One" },
@@ -21,7 +22,7 @@ const IMAGES = [
 
 const About = () => {
   return (
-    <main className="w-full h-min-screen column align-start justify-start p-4">
+    <main className="w-full h-min-screen column align-start justify-start p[200px]">
       <h1 className="justify-center font-xl text-on-background w-full">
         Passion Fuels Purpose!
       </h1>
@@ -98,6 +99,7 @@ const About = () => {
       </div>
 
       <Skills />
+      <Experiences />
     </main>
   );
 };

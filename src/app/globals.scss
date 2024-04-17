@@ -1,58 +1,31 @@
 // reset
-/* @import "../wellintone_lib/reset.module"; */
-
-@import "../wellintone_lib/functions.module";
-@import "../wellintone_lib/variables.module";
-@import "../wellintone_lib/typography.module";
-
-@import "../wellintone_lib/base.module";
-@import "../wellintone_lib/breakpoint.module";
-@import "../wellintone_lib/grid.module";
-
-@import "../wellintone_lib/colors.module";
-
-@import "../wellintone_lib/fonts.module";
-
-@import "../wellintone_lib/animations/word-stagger.module";
-@import "../wellintone_lib/animations/parallax.module";
-@import "../wellintone_lib/animations/spin.module";
-/* @import "../wellintone_lib/animations/fade-in.module"; */
-/* @import "../wellintone_lib/animations/slider-in.module"; */
-
-/* NAVBAR */
-@import "../wellintone_lib/components/Navbar/navbar.module";
-@import "../wellintone_lib/components/Navbar/logo.module";
-@import "../wellintone_lib/components/Navbar/navbar-links-list.module";
-@import "../wellintone_lib/components/Navbar/navbar-link.module";
-@import "../wellintone_lib/components/Navbar/hamburger.module";
-@import "../wellintone_lib/components/Navbar/navbar-additional.module";
-
-@import "../wellintone_lib/components/card.module";
-/* @import "../wellintone_lib/components/button.module"; */
-@import "../wellintone_lib/components/badge.module";
-@import "../wellintone_lib/components/menu-items.module";
-
-/* CARDS */
-@import "../wellintone_lib/components/Cards/card_image_hover.module";
-@import "../wellintone_lib/components/Cards/card_service_1.module";
-
-/* SWITCH */
-@import "../components/Switch/switch.module";
-
-/* SWITCH */
-@import "../components/ImageSlider/imageSlider.module";
-
-/* LOGO WELLINTONE */
-@import "../components/Logo/logo.module";
-
-/* BUTTON */
-@import "../components/Buttons/button.module";
+@import "@wellintone/wellintone_lib_next/dist";
 
 /* PAGES */
 @import "./home.module";
 @import "../app/\(routes\)/about/about.module";
 
-@import "../wellintone_lib/utilities.module";
+// colors
+
+$primary: #ff5c5c !default;
+$primary-variant: #ff2d2d !default;
+$secondary: #1b9999 !default;
+$on-primary: #fafafa;
+$on-background: #424242;
+$on-background-alt: #424242b3;
+$background: #e9e6e0;
+
+$clr-dark: 230 35% 7%;
+$clr-light: 231 77% 90%;
+$clr-white: 0 0% 100%;
+
+$box-shadow: 0 5px 20px 1px #00000080;
+$box-shadow-thin: 0 5px 10px 1px #00000080;
+
+$error: #d32752 !default;
+$warning: #f6c31c !default;
+$confirmed: #26bb26 !default;
+$disabled: #9e9e9e !default;
 
 .hire_container {
   position: absolute;
