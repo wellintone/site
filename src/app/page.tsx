@@ -69,7 +69,7 @@ const Home = () => {
           </div>
         </Container>
 
-        <HireMe />
+        <HireMe className="hire" />
       </Animation>
     </main>
   );

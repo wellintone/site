@@ -9,6 +9,7 @@ import Dribble from "../Svgs/Dribble";
 import Twitter from "../Svgs/Twitter";
 import Linkedin from "../Svgs/Linkedin";
 import Pinterest from "../Svgs/Pinterest";
+import HireMe from "../HireMe/HireMe";
 
 export type INavbar = {
   type?: string;
@@ -31,6 +32,7 @@ function Navbar({ type, linkColor, textBold, height, width }: INavbar) {
   return (
     <header className={` Navbar ${type ? "Navbar-" + type : ""} `}>
       {/* Logo */}
+      <HireMe className="hire-nav" />
 
       {/* NavbarList */}
       <NavbarLinkList

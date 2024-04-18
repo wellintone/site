@@ -1,14 +1,13 @@
 import Link from "next/link";
 import React from "react";
+import Container from "../molecolar/Container";
 
 const Footer = () => {
   return (
-    <footer className="bt-1-solid-on-background w-full px-2">
-      <div className="py-5 align-center justify-space-between">
-        <span className="">
-          {new Date().getFullYear()} &copy; All Rights Reserved.
-        </span>
-        <div className="align-center">
+    <footer className="footer">
+      <div className="wrapper ">
+        <span>{new Date().getFullYear()} &copy; All Rights Reserved.</span>
+        <div>
           Build With <span className="text-primary text-xl px-1"> &#9825;</span>{" "}
           by&nbsp;
           <Link href="/">Wellintone</Link>

@@ -6,6 +6,7 @@
   animation: rotating calc(var(--speed) * 1s) linear infinite;
   display: block;
   transform-origin: center;
+  position: relative;
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
