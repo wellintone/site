@@ -1,31 +1,13 @@
 // reset
-@import "@wellintone/wellintone_lib_next/dist";
+
+@import "../style/index.module";
+@import "../components/NavbarMain/Navbar/navbar.module";
+@import "../components/Buttons/button.module";
+@import "../components/Logo/logo.module";
 
 /* PAGES */
 @import "./home.module";
 @import "../app/\(routes\)/about/about.module";
-
-// colors
-
-$primary: #ff5c5c !default;
-$primary-variant: #ff2d2d !default;
-$secondary: #1b9999 !default;
-$on-primary: #fafafa;
-$on-background: #424242;
-$on-background-alt: #424242b3;
-$background: #e9e6e0;
-
-$clr-dark: 230 35% 7%;
-$clr-light: 231 77% 90%;
-$clr-white: 0 0% 100%;
-
-$box-shadow: 0 5px 20px 1px #00000080;
-$box-shadow-thin: 0 5px 10px 1px #00000080;
-
-$error: #d32752 !default;
-$warning: #f6c31c !default;
-$confirmed: #26bb26 !default;
-$disabled: #9e9e9e !default;
 
 .hire_container {
   position: absolute;

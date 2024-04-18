@@ -1,0 +1,102 @@
+@use "sass:math";
+
+@import "./_hamburger.module";
+@import "./_logo.module";
+@import "./_navbar-additional.module";
+@import "./_navbar-link.module";
+@import "./_navbar-links-list.module";
+
+@mixin Navbar($bg: $primary, $color: null) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid;
+  padding: $base-padding $base-padding;
+
+  @include sm {
+    padding: $base-padding $base-padding * 2;
+  }
+  @include md {
+    padding: $base-padding $base-padding * 2;
+  }
+  @include lg {
+    padding: $base-padding $base-padding * 3;
+  }
+  @include xl {
+    padding: $base-padding $base-padding * 3;
+  }
+  @include xxl {
+    padding: $base-padding $base-padding * 4;
+  }
+
+  .logo__container {
+    @include xs {
+      margin-right: $base-padding * 2;
+    }
+    @include sm {
+      margin-right: $base-padding * 3;
+    }
+    @include md {
+      margin-right: $base-padding * 3;
+    }
+    @include lg {
+      margin-right: $base-padding * 4;
+    }
+    @include xl {
+      margin-right: $base-padding * 6;
+    }
+    @include xxl {
+      margin-right: $base-padding * 8;
+    }
+  }
+
+  .socials__container {
+    display: none;
+
+    @include lg {
+      display: flex;
+      gap: $base-gap;
+      transition: all 0.2s ease-in-out;
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+        filter: drop-shadow(1px 4px 8px rgba(0, 0, 0, 0.5));
+
+        &:hover {
+          transition: all 0.2s ease-in-out;
+          transform: translateY(-2px);
+          filter: drop-shadow(1px 6px 7px rgba(0, 0, 0, 0.5));
+        }
+
+        &:active {
+          transition: all 0.2s ease-in-out;
+          transform: scale(0.9);
+          filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.8));
+        }
+      }
+    }
+  }
+}
+
+.Navbar {
+  @include Navbar();
+  .responsive_nav {
+    transform: translateY(100vh);
+    /* background-color: $background; */
+  }
+}
+
+@each $key, $value in $colors {
+  @for $i from 0 through 10 {
+    .Navbar-#{$key}-transparent-#{$i} {
+      background-color: rgba($value, calc($i / 10));
+    }
+  }
+}
+
+@each $key, $val in $colors {
+  .Navbar-#{$key} {
+    @include Navbar($val);
+  }
+}

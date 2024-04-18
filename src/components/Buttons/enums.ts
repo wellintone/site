@@ -7,6 +7,7 @@ export enum BUTTON_VARIANTS {
   Warning = "warning",
   Confirm = "confirm",
   Disabled = "disabled",
+  Underline = "underline",
 }
 export enum BUTTON_SIZES {
   Small = "small",

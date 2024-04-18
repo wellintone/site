@@ -47,8 +47,8 @@ const AnimatedText: React.FC<IAnimatedText> = ({
       ref={animateRef}
       key={word + "-" + index}
       style={{ "--delay": index || delay } as React.CSSProperties}
-      className={`${className}
-display-i-b text-on-background ${checkCustomClass()}`}
+      className={`${className || ""}
+${checkCustomClass()}`}
     >
       {word}&nbsp;
     </Tag>
@@ -66,7 +66,7 @@ display-i-b text-on-background ${checkCustomClass()}`}
         <span
           ref={animateRef}
           style={{ "--delay": delay } as React.CSSProperties}
-          className={`display-i-b py-2  text-on-background  ${checkCustomClass()}`}
+          className={` ${checkCustomClass()}`}
         >
           {children}
         </span>
@@ -76,7 +76,7 @@ display-i-b text-on-background ${checkCustomClass()}`}
 
   return (
     <div
-      className={`w-full align-center ${className} ${
+      className={`${className} ${
         onLoadPage
           ? "show-animated-text"
           : isOnScreen

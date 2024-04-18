@@ -6,7 +6,7 @@ interface ICustomNavLink {
   linkColor?: string;
   textBold?: number;
   links: LinksType[];
-  customClass: string;
+  customClass?: string;
 }
 
 const NavbarLinkList = ({ navRef, links, customClass }: ICustomNavLink) => {

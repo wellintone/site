@@ -1,0 +1,77 @@
+@mixin fade-base($opacity: 0) {
+  opacity: $opacity;
+}
+
+$fade-from: left, right, top, bottom, "base", "scaleDown", "scaleUp";
+
+@each $val in $fade-from {
+  .fade-in-#{$val} {
+    @if ($val == top) {
+      @include fade-base(0);
+      transform: translateY(-100px);
+    } @else if($val == bottom) {
+      @include fade-base(0);
+      transform: translateY(100px);
+    } @else if($val == right) {
+      @include fade-base(0);
+      transform: translateX(100px);
+    } @else if($val == left) {
+      @include fade-base(0);
+      transform: translateX(-100px);
+    } @else if($val == "scaleDown") {
+      @include fade-base(0);
+      transform: perspective(12.5rem) translateZ(30px);
+    } @else if($val == "scaleUp") {
+      @include fade-base(0);
+      transform: perspective(12.5rem) translateZ(-30px);
+    } @else {
+      @include fade-base(0);
+      transform: scale(0.9);
+    }
+  }
+  .on-fade-in-#{$val} {
+    @if ($val == top) {
+      @include fade-base(1);
+      transform: translateY(0px);
+    } @else if($val == bottom) {
+      @include fade-base(1);
+      transform: translateY(0px);
+    } @else if($val == right) {
+      @include fade-base(1);
+      transform: translateX(0px);
+    } @else if($val == left) {
+      @include fade-base(1);
+      transform: translateX(0px);
+    } @else if($val == "scaleDown") {
+      @include fade-base(1);
+      transform: perspective(12.5rem) translateZ(0);
+    } @else if($val == "scaleUp") {
+      @include fade-base(1);
+      transform: perspective(12.5rem) translateZ(0);
+    } @else {
+      @include fade-base(1);
+      transform: scale(1);
+    }
+  }
+}
+
+@keyframes bouncingZ {
+  20%,
+  50%,
+  80%,
+  to {
+    transform: perspective(12.5rem) translateZ(0);
+  }
+  40% {
+    transform: perspective(12.5rem) translateZ(-30px);
+  }
+  70% {
+    transform: perspective(12.5rem) translateZ(-15px);
+  }
+  90% {
+    transform: perspective(12.5rem) translateZ(-4px);
+  }
+}
+
+@keyframes fade-in-down {
+}

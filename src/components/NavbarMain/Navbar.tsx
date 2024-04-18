@@ -29,7 +29,7 @@ function Navbar({ type, linkColor, textBold, height, width }: INavbar) {
   };
 
   return (
-    <header className={`Navbar ${type ? "Navbar-" + type : ""} `}>
+    <header className={` Navbar ${type ? "Navbar-" + type : ""} `}>
       {/* Logo */}
 
       {/* NavbarList */}
@@ -38,7 +38,6 @@ function Navbar({ type, linkColor, textBold, height, width }: INavbar) {
         navRef={navRef}
         linkColor={linkColor}
         textBold={textBold}
-        customClass="justify-start"
       />
 
       <div className="logo__container">

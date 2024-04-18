@@ -6,7 +6,7 @@ const Dribble = ({ className, ...rest }: SVGProps<SVGSVGElement>) => (
     width="1em"
     height="1em"
     viewBox="0 0 256 256"
-    className={`${className} h[2em] w[100%]`}
+    className={`${className}`}
     {...rest}
   >
     <path fill="rgba(255, 255, 255, 0)" d="M0 0h256v256H0z" />

@@ -1,0 +1,43 @@
+@mixin navbarIcon($color) {
+  height: 20px;
+  width: 20px;
+  color: $color;
+  cursor: pointer;
+}
+
+.navbar-additional {
+  width: 100%;
+  background-color: black;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  .contacts {
+    display: flex;
+    /*  gap: $gap-sm; */
+    font-weight: 900;
+    cursor: pointer;
+
+    .info__content {
+      display: flex;
+      gap: calc($base-gap - 10px);
+    }
+    &__icon {
+      @include navbarIcon($on-background);
+    }
+  }
+  .socials {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: calc($base-gap - 10px);
+    .navbarAdditional__social {
+      @include navbarIcon($on-background);
+    }
+  }
+}
