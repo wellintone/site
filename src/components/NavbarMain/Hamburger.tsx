@@ -2,9 +2,10 @@ import React, { Fragment } from "react";
 
 interface IHamburger {
   onToggleMenu: (toggle: boolean) => void;
+  isResponsiveNav: boolean;
 }
 
-const Hamburger = ({ onToggleMenu }: IHamburger) => {
+const Hamburger = ({ onToggleMenu, isResponsiveNav }: IHamburger) => {
   const handleChange = (event: any) => {
     if (event.target.checked) {
       onToggleMenu(false);
@@ -14,7 +15,11 @@ const Hamburger = ({ onToggleMenu }: IHamburger) => {
   };
   return (
     <label className="hamburger-menu">
-      <input type="checkbox" onChange={handleChange} />
+      <input
+        type="checkbox"
+        checked={isResponsiveNav}
+        onChange={handleChange}
+      />
     </label>
   );
 };

@@ -3,15 +3,20 @@ import { usePathname, useRouter } from "next/navigation";
 interface ICustomNavLink {
   route: string;
   children: string | JSX.Element | JSX.Element[];
+  onClick: () => void;
 }
 
-const NavbarLink = ({ route, children }: ICustomNavLink) => {
+const NavbarLink = ({ route, children, onClick }: ICustomNavLink) => {
   const currentPath = usePathname();
   const router = useRouter();
 
   const waitToChange = () => {
     const el = document.getElementById("transP")?.children;
+
     if (el) {
+      setTimeout(() => {
+        onClick();
+      }, 1400);
       for (let i = 0; i < el?.length; i++) {
         el[i]?.classList.remove(`transitionPageTest__${i + 1}`);
         el[i]?.classList.add(`animateTransitionPageTest__${i + 1}`);

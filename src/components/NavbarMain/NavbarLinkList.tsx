@@ -7,13 +7,19 @@ interface ICustomNavLink {
   textBold?: number;
   links: LinksType[];
   customClass?: string;
+  onClick: () => void;
 }
 
-const NavbarLinkList = ({ navRef, links, customClass }: ICustomNavLink) => {
+const NavbarLinkList = ({
+  navRef,
+  links,
+  customClass,
+  onClick,
+}: ICustomNavLink) => {
   return (
     <nav ref={navRef} className={`navbarLinkList ${customClass}`}>
       {links.map(({ name, route }: LinksType) => (
-        <NavbarLink key={name} route={route}>
+        <NavbarLink key={name} route={route} onClick={onClick}>
           {name}
         </NavbarLink>
       ))}

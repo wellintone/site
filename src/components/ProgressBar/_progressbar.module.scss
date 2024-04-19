@@ -1,0 +1,49 @@
+.progress {
+  height: auto;
+  margin: 20px 0;
+
+  .label-progressbar {
+    font-size: $font-3xl;
+    color: $on-background;
+    margin-bottom: -45px;
+  }
+
+  &__number {
+    text-align: left;
+    color: $on-background;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    font-size: $font-3xl;
+  }
+
+  &__wrapper {
+    background-color: transparent;
+    border: 3px solid $on-background;
+    overflow: hidden;
+    height: 50px;
+    border-radius: 20px;
+  }
+
+  &-percentage {
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+    height: 100%;
+    background-color: $primary;
+    overflow: hidden;
+  }
+
+  .startAnimation {
+    transform: translateX(0%);
+    transition: all 1s ease-in;
+  }
+
+  @keyframes skillBar {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}

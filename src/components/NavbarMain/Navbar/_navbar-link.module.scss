@@ -5,6 +5,11 @@
   left: 10px;
   cursor: pointer;
   transition: width 0.3s ease-in-out;
+  font-size: $font-size-sm;
+
+  @include lg {
+    font-size: $font-size-xs;
+  }
 
   &:hover {
     .bottom__line {
@@ -21,16 +26,17 @@
   .bottom__line {
     display: inline-block;
     width: 0%;
-    background-color: $on-background;
+    background-color: $primary;
     position: absolute;
     left: 0;
     bottom: -0.5px;
-    height: 1px;
+    height: 5px;
     transition: width 0.3s ease-in-out;
   }
 
   .activated {
     transition: width 0.3s ease-in-out;
     width: 100%;
+    color: $primary;
   }
 }

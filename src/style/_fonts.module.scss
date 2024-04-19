@@ -18,7 +18,7 @@ $maxParagraph: 1.125rem;
 $minParagraph: 0.875rem;
 
 $current: 10vw;
-
+/* 
 h1 {
   font-family: var(--font-playfair_display);
   font-size: clamp($minH1, $current, $maxH1);
@@ -44,3 +44,4 @@ p {
   margin: 0;
   font-size: clamp($minParagraph, 2vw, $maxParagraph);
 }
+ */

@@ -49,6 +49,12 @@
       gap: $base-gap;
       margin-top: 10px;
       padding-bottom: 50px;
+      justify-content: center;
+      width: 100%;
+
+      @include md {
+        justify-content: left;
+      }
     }
   }
 }

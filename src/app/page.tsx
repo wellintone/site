@@ -46,25 +46,27 @@ const Home = () => {
                 ut aspernatur. Nostrum dolorum vero tempora!
               </div>
             </AnimatedText>
-            <AnimatedText delay={10} bouncingY={true}>
-              <div className="home__description-buttons">
-                <Link href={"/dummy.pdf"} target={"_blank"} download={true}>
-                  <Button
-                    size={BUTTON_SIZES.Large}
-                    variant={BUTTON_VARIANTS.Primary}
-                  >
-                    Resume
-                  </Button>
-                </Link>
-                <Link href="mailto:abcd@gmail.com">
-                  <Button
-                    size={BUTTON_SIZES.Large}
-                    variant={BUTTON_VARIANTS.Underline}
-                  >
-                    Contact
-                  </Button>
-                </Link>
-              </div>
+            <AnimatedText
+              delay={10}
+              bouncingY={true}
+              className="home__description-buttons"
+            >
+              <Link href={"/dummy.pdf"} target={"_blank"} download={true}>
+                <Button
+                  size={BUTTON_SIZES.Large}
+                  variant={BUTTON_VARIANTS.Primary}
+                >
+                  Resume
+                </Button>
+              </Link>
+              <Link href="mailto:abcd@gmail.com">
+                <Button
+                  size={BUTTON_SIZES.Large}
+                  variant={BUTTON_VARIANTS.Underline}
+                >
+                  Contact
+                </Button>
+              </Link>
             </AnimatedText>
           </div>
         </Container>

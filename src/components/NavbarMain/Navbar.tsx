@@ -29,22 +29,33 @@ function Navbar({ type, linkColor, textBold, height, width }: INavbar) {
     setIsResponsiveNav(!isResponsiveNav);
   };
 
+  const onChangeRoute = () => {
+    if (navRef?.current?.classList.contains("responsive_nav")) {
+      navRef?.current?.classList.toggle("responsive_nav");
+      setIsResponsiveNav(!isResponsiveNav);
+    } else {
+      return;
+    }
+  };
+
   return (
     <header className={` Navbar ${type ? "Navbar-" + type : ""} `}>
       {/* Logo */}
       <HireMe className="hire-nav" />
 
+      <div className="logo__container">
+        <LogoWellintone />
+      </div>
+
       {/* NavbarList */}
       <NavbarLinkList
+        onClick={onChangeRoute}
         links={Links}
         navRef={navRef}
         linkColor={linkColor}
         textBold={textBold}
       />
 
-      <div className="logo__container">
-        <LogoWellintone />
-      </div>
       {/* Contact Us */}
 
       <div className="socials__container">
@@ -58,7 +69,7 @@ function Navbar({ type, linkColor, textBold, height, width }: INavbar) {
       {/* <Switch /> */}
 
       {/* Hamburger */}
-      <Hamburger onToggleMenu={showNavbar} />
+      <Hamburger isResponsiveNav={isResponsiveNav} onToggleMenu={showNavbar} />
     </header>
   );
 }

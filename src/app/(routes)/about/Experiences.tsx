@@ -19,15 +19,19 @@ const Details = ({
   useEffect(() => {
     if (onScreen) {
       window.addEventListener("scroll", (e: any) => {
-        const l = refLine.current.getBoundingClientRect();
+        if (refLine) {
+          const l = refLine?.current?.getBoundingClientRect();
 
-        if ((((window.scrollY - l.bottom) / l.height) * 100) / 2 <= 100) {
-          setHeight((((window.scrollY - l.bottom - 100) / l.height) * 100) / 2);
+          if ((((window.scrollY - l.bottom) / l.height) * 100) / 2 <= 100) {
+            setHeight(
+              (((window.scrollY - l.bottom - 100) / l.height) * 100) / 2
+            );
+          }
+          console.log(
+            "((window.scrollY - l.bottom + 500) / l.height) * 100 - 90",
+            ((window.scrollY - l.bottom + 500) / l.height) * 100 - 90
+          );
         }
-        console.log(
-          "((window.scrollY - l.bottom + 500) / l.height) * 100 - 90",
-          ((window.scrollY - l.bottom + 500) / l.height) * 100 - 90
-        );
       });
     }
   }, [onScreen]);

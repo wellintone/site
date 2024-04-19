@@ -1,25 +1,130 @@
 .about {
   min-height: 100vh;
-}
-.shadowImage {
-  box-shadow: 15px 15px black;
-}
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
 
-.progress {
-  transform: translateX(-100%);
-  transition: all 1s ease-in;
-}
+  padding: $base-padding $base-padding;
 
-.startAnimation {
-  transform: translateX(0%);
-  transition: all 1s ease-in;
-}
-
-@keyframes skillBar {
-  from {
-    width: 0;
+  @include sm {
+    padding: $base-padding $base-padding * 2;
   }
-  to {
+  @include md {
+    padding: $base-padding $base-padding * 2;
+  }
+  @include lg {
+    padding: $base-padding $base-padding * 6;
+  }
+  @include xl {
+    padding: $base-padding $base-padding * 7;
+  }
+  @include xxl {
+    padding: $base-padding $base-padding * 10;
+  }
+
+  &__title {
     width: 100%;
+    text-align: center;
+    margin-bottom: $base-gap-4;
+    margin-top: $base-gap-2;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    gap: $base-gap-4;
+    margin-top: 2rem;
+    flex-direction: column;
+    @include md {
+      flex-direction: row;
+    }
+
+    &-biography {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      flex-direction: column;
+      width: 100%;
+      order: 1;
+      min-width: auto;
+      @include md {
+        order: 0;
+        width: calc(100% / 3);
+        min-width: 400px;
+      }
+
+      &-title {
+        margin-bottom: $base-gap;
+        font-size: $font-2xl;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $on-background;
+      }
+
+      & > p {
+        margin-bottom: $base-gap;
+      }
+    }
+    &-photo {
+      box-shadow: 15px 15px $on-background;
+      border-radius: 20px;
+      border: 2px solid $on-background;
+      padding: 20px;
+      width: 100%;
+      margin-left: 0px;
+      @include md {
+        margin-left: 50px;
+        width: calc(100% / 2);
+      }
+
+      & > img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+      }
+    }
+
+    &-numbers {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      order: 3;
+      flex-direction: row;
+
+      @include md {
+        flex-direction: column;
+        order: 3;
+        width: calc(100% / 3);
+      }
+
+      .number-box {
+        margin-top: -20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include md {
+          align-items: end;
+        }
+
+        .number {
+          font-size: $font-size-lg;
+          color: $on-background;
+          font-weight: 900;
+        }
+
+        .description {
+          margin-top: -25px;
+          text-align: center;
+
+          @include md {
+            text-align: right;
+          }
+        }
+      }
+    }
   }
 }

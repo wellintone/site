@@ -3,6 +3,7 @@
 @import "../style/index.module";
 @import "../components/NavbarMain/Navbar/navbar.module";
 @import "../components/Buttons/button.module";
+@import "../components/ProgressBar/progressbar.module";
 @import "../components/Logo/logo.module";
 @import "../components/HireMe/hire-me.module";
 @import "../components/Footer/footer.module";
@@ -10,6 +11,7 @@
 /* PAGES */
 @import "./home.module";
 @import "../app/\(routes\)/about/about.module";
+@import "../app/\(routes\)/about/skills.module";
 
 .animated_cursor_child {
   transform: translate(var(--x), var(--y));

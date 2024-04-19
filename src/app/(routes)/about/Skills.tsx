@@ -1,4 +1,4 @@
-import ProgressBar from "@/animation/ProgressBar";
+import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import React, { useEffect, useMemo } from "react";
 
 const ProgrammingData = [
@@ -32,20 +32,16 @@ const MarketingData = [
 
 export const Skills = () => {
   return (
-    <div className="w-full mt-4">
-      <h1 className="justify-center font-xl text-on-background w-full">
-        Skills
-      </h1>
+    <div className="skills">
+      <h1 className="skills__title h1">Skills</h1>
 
-      <div className="mt-4 w-full align-start justify-center g-16">
-        <div className="w[50%] column ">
+      <div className="skills__wrapper">
+        <span>
           {ProgrammingData.map((skill: any, idx: number) => {
             return (
-              <div key={idx} className="my-2">
-                <div className="label txt-4xl color-on-background">
-                  {skill.name}
-                </div>
+              <div key={idx}>
                 <ProgressBar
+                  label={skill.name}
                   position="bottom"
                   width={skill.percentage}
                   hasIncreaseNumber={true}
@@ -56,15 +52,13 @@ export const Skills = () => {
               </div>
             );
           })}
-        </div>
-        <div className="w[50%] column">
+        </span>
+        <span>
           {MarketingData.map((skill: any, idx: number) => {
             return (
-              <div key={idx} className="my-2">
-                <div className="label txt-4xl color-on-background">
-                  {skill.name}
-                </div>
+              <div key={idx}>
                 <ProgressBar
+                  label={skill.name}
                   position="bottom"
                   width={skill.percentage}
                   hasIncreaseNumber={true}
@@ -75,7 +69,7 @@ export const Skills = () => {
               </div>
             );
           })}
-        </div>
+        </span>
       </div>
     </div>
   );

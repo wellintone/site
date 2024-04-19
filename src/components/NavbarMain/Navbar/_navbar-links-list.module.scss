@@ -12,6 +12,7 @@
   transition: 1.5s;
   z-index: 99;
   gap: 50px;
+  width: 100%;
 
   .links {
     flex-direction: column;
@@ -31,7 +32,9 @@
 
 .navbarLinkList {
   @include xl {
+    width: fit-content;
     position: relative;
+    justify-content: left;
     top: 0;
     flex-direction: row;
     height: 100%;

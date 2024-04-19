@@ -13,21 +13,24 @@ $font-sm: 0.875rem;
 $font-xs: 0.75rem;
 
 h1 {
-  font-size: clamp($font-xl, 10vw, $font-7xl);
+  font-size: clamp($font-5xl, 10vw, $font-9xl);
   line-height: 1;
   height: clamp(2rem, 7vw, 4.5rem);
+  color: $on-background;
 }
 .h1 {
-  font-size: clamp($font-3xl, 5vw, $font-7xl);
-
+  font-size: clamp($font-5xl, 5vw, $font-9xl);
+  color: $on-background;
   font-weight: 900;
 }
 h2 {
   font-size: clamp($font-5xl, 10vw, $font-7xl);
   line-height: 1;
+  color: $on-background;
 }
 p {
-  font-size: clamp($font-xl, 15vw, $font-2xl);
+  color: $on-background;
+  font-size: clamp($font-base, 10vw, $font-lg);
 }
 /*
 

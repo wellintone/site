@@ -22,78 +22,52 @@ const IMAGES = [
 
 const About = () => {
   return (
-    <main className="w-full h-min-screen column align-start justify-start p[200px]">
-      <h1 className="justify-center font-xl text-on-background w-full">
-        Passion Fuels Purpose!
-      </h1>
-      <div className="grid w-full grid-cols-8 g-16 mt-4">
-        <div className="col-span-3  align-start justify-start column">
-          <h2 className="mb-3 mt-2 text-lg font-900 uppercase text-on-background">
-            Biography
-          </h2>
+    <main className="about">
+      <h1 className="h1 about__title">Passion Fuels Purpose!</h1>
+      <div className="about__wrapper">
+        <div className="about__wrapper-biography">
+          <h2 className="about__wrapper-biography-title">Biography</h2>
 
-          <p className="text-base">
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis,
             maxime voluptates vero consequuntur alias ratione enim ullam quo.
             Non distinctio dolorum minus numquam architecto, alias id placeat?
             Nulla, eveniet!
           </p>
-          <p className="my-2 text-base">
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis,
             maxime voluptates vero consequuntur alias ratione enim ullam quo.
             Non distinctio dolorum minus numquam architecto, alias id placeat?
             Nulla, eveniet!
           </p>
-          <p className="text-base">
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis,
             maxime voluptates vero consequuntur alias ratione enim ullam quo.
             Non distinctio dolorum minus numquam architecto, alias id placeat?
             Nulla, eveniet!
           </p>
         </div>
-        <div className="col-span-3 ps-r h-max b-radius-25 b-2-solid-on-background p-4 shadowImage">
+        <div className="about__wrapper-photo">
           <Image
             src={profilePic}
             alt="Codebucks"
-            className="w-full h-auto b-radius-xs "
             priority
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
           />
         </div>
 
-        <div className="col-span-2 flex column align-end justify-between">
-          <div className="column align-end justify-center">
-            <span className="display-i-b txt-7xl font-w-900">
-              <IncreaseNumber
-                className="txt-7xl"
-                num={50}
-                time={50}
-                symbol="+"
-              />
-            </span>
-            <h2 className="txt-2xl">Satisfied Clients</h2>
+        <div className="about__wrapper-numbers">
+          <div className="number-box">
+            <IncreaseNumber className="number" num={50} time={50} symbol="+" />
+            <p className="description">Satisfied Clients</p>
           </div>
-          <div className="my-4 column align-end justify-center">
-            <span className="display-i-b txt-7xl font-w-900">
-              <IncreaseNumber
-                className="txt-7xl"
-                num={40}
-                time={50}
-                symbol="+"
-              />
-            </span>
-            <h2 className="txt-2xl">Projects Completed</h2>
+          <div className="number-box">
+            <IncreaseNumber className="number" num={6} time={200} symbol="+" />
+            <p className="description">Years of experiences</p>
           </div>
-          <div className="column align-end justify-center">
-            <span className="display-i-b txt-7xl font-w-900">
-              <IncreaseNumber
-                className="txt-7xl"
-                num={6}
-                time={200}
-                symbol="+"
-              />
-            </span>
-            <h2 className="txt-2xl">Years of experiences</h2>
+          <div className="number-box">
+            <IncreaseNumber className="number" num={40} time={50} symbol="+" />
+            <p className="description">Projects Completed</p>
           </div>
         </div>
       </div>
