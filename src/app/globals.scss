@@ -23,6 +23,10 @@
 @import "../app/\(routes\)/projects/projects.module";
 @import "../app/\(routes\)/projects/featured-projects.module";
 
+/* ARTICLES */
+@import "../app/\(routes\)/articles/articles.module";
+@import "../app/\(routes\)/articles/article.module";
+
 .animated_cursor_child {
   transform: translate(var(--x), var(--y));
 }

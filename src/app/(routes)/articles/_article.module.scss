@@ -1,0 +1,28 @@
+.article {
+  height: max-content;
+  width: 100%;
+  box-shadow: 5px 5px $on-background;
+  border-radius: 20px;
+  border: 2px solid $on-background;
+  padding: 20px;
+  position: relative;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $base-gap-2;
+
+  &__title {
+    text-decoration: none;
+
+    & > * {
+      font-size: $font-2xl;
+      font-weight: 600;
+    }
+  }
+
+  &__date {
+    color: $primary;
+    font-weight: 600;
+  }
+}

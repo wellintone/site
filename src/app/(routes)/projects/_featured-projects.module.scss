@@ -20,7 +20,6 @@
   }
 }
 .featured-projects {
-  container-name: featured-projects;
   height: max-content;
   width: 100%;
   box-shadow: 15px 15px $on-background;
@@ -79,6 +78,9 @@
     align-items: center;
     gap: 10px;
 
+    .time {
+      color: $primary;
+    }
     svg {
       height: 2rem;
       width: 2rem;

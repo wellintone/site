@@ -1,11 +1,20 @@
 import Button from "@/components/Buttons/button";
 import Linkedin from "@/components/Svgs/Linkedin";
+import { time } from "console";
 import Image from "next/image";
 import Link from "next/link";
 import { type } from "os";
 import React from "react";
 
-const FeaturedProjects = ({ type, title, summary, img, link, github }: any) => {
+const FeaturedProjects = ({
+  type,
+  title,
+  summary,
+  img,
+  link,
+  github,
+  time,
+}: any) => {
   return (
     <article className="featured-projects">
       <Link
@@ -22,12 +31,17 @@ const FeaturedProjects = ({ type, title, summary, img, link, github }: any) => {
         </Link>
         <p className="featured-projects__description">{summary}</p>
         <div className="featured-projects__footer">
-          <Link href={github} target="_blank" className="icon">
-            <Linkedin />
-          </Link>
-          <Link href={link} target="_blank">
-            <Button>Visit Project</Button>
-          </Link>
+          {github && (
+            <Link href={github} target="_blank" className="icon">
+              <Linkedin />
+            </Link>
+          )}
+          {!time && (
+            <Link href={link} target="_blank">
+              <Button>Visit Project</Button>
+            </Link>
+          )}
+          <div className="time">{time}</div>
         </div>
       </div>
     </article>
