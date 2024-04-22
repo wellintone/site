@@ -1,0 +1,39 @@
+.projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    padding: $base-padding $base-padding;
+    gap: $base-gap-2;
+
+    @include sm {
+      padding: $base-padding $base-padding * 2;
+    }
+    @include md {
+      padding: $base-padding $base-padding * 2;
+    }
+    @include lg {
+      padding: $base-padding $base-padding * 6;
+    }
+    @include xl {
+      padding: $base-padding $base-padding * 7;
+    }
+    @include xxl {
+      padding: $base-padding $base-padding * 10;
+    }
+  }
+
+  &__content {
+    .container {
+      @include md {
+        padding-top: 0;
+      }
+      grid-gap: $base-gap-2;
+    }
+  }
+}

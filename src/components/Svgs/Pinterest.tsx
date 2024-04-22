@@ -3,7 +3,7 @@ import { SVGProps } from "react";
 const SvgComponent = ({ className, ...rest }: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className={`${className} h[2em] w[100%]`}
+    className={`${className}`}
     {...rest}
     viewBox="0 0 256 256"
   >

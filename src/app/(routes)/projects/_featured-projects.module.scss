@@ -1,0 +1,106 @@
+.single {
+  & > article {
+    @include lg {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: $base-gap-2;
+      .featured-projects__container-image {
+        width: 50%;
+        height: 100%;
+      }
+      .featured-projects__content {
+        width: 50%;
+      }
+      .featured-projects__footer {
+        display: flex;
+        justify-content: start;
+      }
+    }
+  }
+}
+.featured-projects {
+  container-name: featured-projects;
+  height: max-content;
+  width: 100%;
+  box-shadow: 15px 15px $on-background;
+  border-radius: 20px;
+  border: 2px solid $on-background;
+  padding: 20px;
+  position: relative;
+
+  &__container-image {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__image {
+    height: 340px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.6s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.6s ease-in-out;
+    }
+  }
+
+  &__type {
+    color: $primary;
+    font-size: $font-3xl;
+    padding: 1rem 0;
+  }
+
+  &__title {
+    text-decoration: none;
+    transition: all 1s ease-in-out;
+    & > * {
+      padding-bottom: 1rem;
+      font-size: $font-5xl;
+    }
+    &:hover,
+    &:visited,
+    &:active {
+      text-decoration: underline;
+      text-decoration-color: $primary;
+      transition: all 1s ease-in-out;
+    }
+  }
+
+  &__description {
+    padding-bottom: 1rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+      filter: drop-shadow(1px 4px 8px rgba(0, 0, 0, 0.5));
+
+      &:hover {
+        transition: all 0.2s ease-in-out;
+        transform: translateY(-2px);
+        filter: drop-shadow(1px 6px 7px rgba(0, 0, 0, 0.5));
+      }
+
+      &:active {
+        transition: all 0.2s ease-in-out;
+        transform: scale(0.9);
+        filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.8));
+      }
+    }
+
+    & > a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+  }
+}
