@@ -1,0 +1,60 @@
+.details {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @include md {
+    width: 70%;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    gap: 50px;
+    height: 100%;
+    min-height: 40vh;
+
+    .left-line {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      align-items: center;
+      .line {
+        width: 8px;
+        background-color: #ff5c5c;
+        transition: all 3s ease-in-out;
+        top: 10px;
+        right: calc(100% + 20px);
+        height: 0%;
+      }
+      .point__education {
+        border-radius: 100%;
+        border: 8px solid $primary;
+        height: 50px;
+        width: 50px;
+        background-color: white;
+      }
+    }
+
+    .content {
+      margin-left: 80px;
+
+      .name-company {
+        font-weight: 900;
+        font-size: $font-3xl;
+      }
+      .time-company {
+        font-weight: 500;
+        color: $on-background;
+      }
+      .work-description {
+        font-weight: 500;
+        color: $on-background;
+      }
+    }
+  }
+}

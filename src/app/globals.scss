@@ -12,6 +12,10 @@
 @import "./home.module";
 @import "../app/\(routes\)/about/about.module";
 @import "../app/\(routes\)/about/skills.module";
+@import "../app/\(routes\)/about/experiences/experience-detail.module";
+@import "../app/\(routes\)/about/experiences/experiences.module";
+@import "../app/\(routes\)/about/education/education-detail.module";
+@import "../app/\(routes\)/about/education/educations.module";
 
 .animated_cursor_child {
   transform: translate(var(--x), var(--y));

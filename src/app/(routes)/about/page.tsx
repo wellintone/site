@@ -10,7 +10,8 @@ import fifth from "../../../../public/img/right.jpg";
 import Image from "next/image";
 import { Skills } from "./Skills";
 import IncreaseNumber from "@/animation/IncreaseNumber";
-import Experiences from "./Experiences";
+import Experiences from "./experiences/Experiences";
+import Educations from "./education/Educations";
 
 const IMAGES = [
   { url: first, alt: "Car One" },
@@ -74,6 +75,7 @@ const About = () => {
 
       <Skills />
       <Experiences />
+      <Educations />
     </main>
   );
 };

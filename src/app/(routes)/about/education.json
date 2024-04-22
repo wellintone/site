@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "position": "Bachelor Of Audio Engineer",
+    "time": "2012-2015",
+    "address": "Milano",
+    "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ea alias, rem, hic modi labore veritatis beatae necessitatibus, aliquid molestias magnam soluta commodi quas vitae est dolores a officia obcaecati."
+  },
+  {
+    "id": "2",
+    "position": "Cinema Tv e Produzione multimediale",
+    "time": "2016-2018",
+    "address": "Bologna",
+    "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ea alias, rem, hic modi labore veritatis beatae necessitatibus, aliquid molestias magnam soluta commodi quas vitae est dolores a officia obcaecati."
+  }
+]
