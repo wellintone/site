@@ -10,6 +10,9 @@ import HireMe from "@/components/HireMe/HireMe";
 import { Animation } from "@/context/AnimationContext";
 import { BUTTON_SIZES, BUTTON_VARIANTS } from "@/components/Buttons/enums";
 import Container from "@/components/molecolar/Container";
+import ServicesList from "./servicesList/ServicesList";
+import Letsbuild from "./letsbuild/Letsbuild";
+import Tab from "@/components/Tab/Tab";
 
 const Home = () => {
   return (
@@ -35,15 +38,16 @@ const Home = () => {
               as="h1"
               className="h1"
             >
-              Turning Vision Into Reality With Code And Design.
+              Digitalmente unici, il tuo successo è il nostro
             </AnimatedText>
+            {/* Domina il digitale con la SEO, Scatena il potenziale della tua
+              azienda. */}
 
             <AnimatedText bouncingY={true} delay={10} as="p">
               <div className="home__description-paragraph">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Tempora labore explicabo libero commodi sequi delectus saepe, et
-                suscipit veritatis aliquid itaque, voluptatum dolores, dolorum
-                ut aspernatur. Nostrum dolorum vero tempora!
+                Scateniamo il potenziale della tua azienda, dominiamo il
+                digitale in tutte le sue forme, dalla SEO alla gestione del
+                Visual Branding.
               </div>
             </AnimatedText>
             <AnimatedText
@@ -73,6 +77,9 @@ const Home = () => {
 
         <HireMe className="hire" />
       </Animation>
+      <ServicesList />
+      <Tab />
+      <Letsbuild></Letsbuild>
     </main>
   );
 };

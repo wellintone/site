@@ -47,7 +47,7 @@ const AnimateFadeIn = ({
       setOpacity(1);
       setMyDelay(delay);
     }, delay * 100);
-  }, [count]);
+  }, [count, delay, shiftMount]);
 
   const fadeDirection = useMemo(() => {
     let fade = undefined;

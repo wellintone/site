@@ -7,9 +7,12 @@
 @import "../components/Logo/logo.module";
 @import "../components/HireMe/hire-me.module";
 @import "../components/Footer/footer.module";
+@import "../components/Tab/tab.module";
 
 /* PAGES */
 @import "./home.module";
+@import "./servicesList/servicesList.module";
+@import "./letsBuild/letsBuild.module";
 
 /* ABOUT */
 @import "../app/\(routes\)/about/about.module";
@@ -26,6 +29,9 @@
 /* ARTICLES */
 @import "../app/\(routes\)/articles/articles.module";
 @import "../app/\(routes\)/articles/article.module";
+
+/* SERVICES */
+@import "../app/\(routes\)/services/services.module";
 
 .animated_cursor_child {
   transform: translate(var(--x), var(--y));

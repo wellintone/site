@@ -1,8 +1,9 @@
 import { LinksType } from "@/types/links";
 
 export const Links: LinksType[] = [
-  { route: "/", name: "Home" },
-  { route: "/about", name: "About" },
-  { route: "/projects", name: "Projects" },
-  { route: "/articles", name: "Articles" },
+  { route: "/", name: "" },
+  { route: "/about", name: "Chi sono" },
+  { route: "/services", name: "Servizi" },
+  { route: "/projects", name: "Progetti" },
+  { route: "/articles", name: "Articoli" },
 ];

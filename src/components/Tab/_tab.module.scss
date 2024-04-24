@@ -1,0 +1,7 @@
+.tab {
+  overflow: hidden;
+  &__content {
+    display: flex;
+    min-width: 100%;
+  }
+}

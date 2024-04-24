@@ -15,7 +15,7 @@ $font-xs: 0.75rem;
 h1 {
   font-size: clamp($font-5xl, 10vw, $font-9xl);
   line-height: 1;
-  height: clamp(2rem, 7vw, 4.5rem);
+  /*  height: clamp(2rem, 7vw, 4.5rem); */
   color: $on-background;
 }
 .h1 {

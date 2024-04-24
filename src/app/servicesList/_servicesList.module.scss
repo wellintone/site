@@ -1,0 +1,99 @@
+.services {
+  &__title {
+    text-align: center;
+    font-size: $font-9xl;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__default {
+    height: 0%;
+    transition: all 2s ease-in-out;
+  }
+
+  &__card {
+    height: 100%;
+    transition: all 2s ease-in-out;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 180px;
+    position: relative;
+    /* box-shadow: 5px 5px 5px 5px rgb(220, 220, 220); */
+
+    &:nth-child(1) {
+      background-color: $primary;
+      color: $background;
+      font-weight: 400;
+    }
+    &:nth-child(2) {
+      background-color: $primary;
+      color: $background;
+      font-weight: 400;
+    }
+    &:nth-child(3) {
+      background-color: $primary;
+      color: $background;
+      font-weight: 400;
+    }
+
+    /*  
+    &:nth-child(4) {
+      background-color: $tertiary;
+      color: $background;
+      font-weight: 400;
+    }
+    &:nth-child(5) {
+      background-color: $primary-complementary;
+      color: $on-background;
+      font-weight: 400;
+    }
+    &:nth-child(6) {
+      background-color: $secondary-complementary;
+      color: $background;
+      font-weight: 400;
+    } */
+
+    &-title {
+      color: transparent;
+      transition: all 1s ease-in-out;
+      height: 0px;
+    }
+    .animate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      background-color: $background;
+      font-size: $font-8xl;
+      font-weight: 400;
+      color: $on-background;
+      height: auto;
+      transition: height 2.5s ease-in-out, color 4.5s ease-in-out;
+      padding: $base-padding;
+    }
+
+    &-description {
+      margin-top: -400px;
+      color: transparent;
+      transition: margin-top 3.5s ease-in-out, color 4.5s ease-in-out;
+    }
+
+    .animate__description {
+      padding: $base-padding;
+      font-size: $font-4xl;
+      text-align: center;
+      width: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: margin-top 3.5s ease-in-out, color 4.5s ease-in-out;
+      color: $on-background;
+      margin-top: 0px;
+      padding: $base-padding * 4;
+    }
+  }
+}

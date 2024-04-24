@@ -8,7 +8,7 @@ export function useOnScreen(ref: any, root?: any, rootMargin?: any) {
     return {
       root: null,
       threshold: root ? 1 : 0,
-      rootMargin: root && rootMargin ? `${rootMargin}%` : "0px",
+      rootMargin: rootMargin ? `${rootMargin}%` : "0px",
     };
   }, [root, rootMargin]);
 

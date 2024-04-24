@@ -1,0 +1,57 @@
+.letsBuild {
+  display: flex;
+  flex-direction: column;
+  padding: $base-padding * 10;
+  /*  background-color: $secondary; */
+  color: $background;
+  gap: $base-gap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 1400px;
+    z-index: 1;
+  }
+
+  &__hover {
+    background-color: rgba($secondary, 0.8);
+    width: 100%;
+    height: 1400px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__title {
+    font-size: $font-8xl;
+    color: $background;
+    margin-bottom: $base-margin;
+    font-weight: 900;
+    text-align: center;
+    z-index: 3;
+  }
+
+  &__description {
+    color: $background;
+    font-size: $font-2xl;
+    margin-bottom: $base-margin;
+    z-index: 3;
+  }
+
+  &__callToAction {
+    z-index: 3;
+    gap: $base-gap-2;
+    display: flex;
+
+    & > button {
+      font-size: $font-2xl;
+    }
+  }
+}

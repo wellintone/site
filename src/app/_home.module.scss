@@ -37,6 +37,7 @@
     }
     &-paragraph {
       text-align: center;
+      font-size: $font-2xl;
 
       @include md {
         text-align: left;

@@ -62,8 +62,10 @@ const Parallax = ({
   return (
     <div
       id={id}
-      className={`text-center align-center justify-center `}
       style={{
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
         zIndex: zIndex,
         position: "absolute",
         left: 0,
@@ -74,13 +76,14 @@ const Parallax = ({
     >
       <span
         style={{
+          textAlign: "center",
+          alignItems: "center",
           opacity: 0,
           position: "absolute",
           border: "1px solid blue",
           height: height || refDimensions.height,
           width: refDimensions.width,
         }}
-        className="text-center align-center"
         id="reference"
         ref={parallaxElement}
       ></span>
